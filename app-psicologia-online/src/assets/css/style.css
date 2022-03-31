@@ -475,7 +475,7 @@ h1, h2, h3, h4, h5, h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 40px 0;
   overflow: hidden;
 }
 
@@ -524,9 +524,9 @@ section {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 20px 0;
-  background-color: #f1f7fd;
+  background-color: #fdfdfd;
   min-height: 40px;
-  margin-top: 120px;
+  margin-top: 60px;
 }
 @media (max-width: 992px) {
   .breadcrumbs {
@@ -1023,10 +1023,10 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Doctors
+# Doctors / Specialists
 --------------------------------------------------------------*/
 .doctors {
-  background: #6b98c017;
+  background: #ffffff17;
 }
 .doctors .member {
   position: relative;
