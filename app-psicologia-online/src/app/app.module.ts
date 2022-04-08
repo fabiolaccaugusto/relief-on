@@ -12,6 +12,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DepartmentsComponent } from './departments/departments.component';
+import { CursosComponent } from './cursos/cursos.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { DepartmentsComponent } from './departments/departments.component';
     AppointmentComponent,
     HeaderComponent,
     FooterComponent,
-    DepartmentsComponent
+    DepartmentsComponent,
+    CursosComponent
+
   ],
   imports: [
     BrowserModule,
