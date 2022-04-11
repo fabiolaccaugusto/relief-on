@@ -1,1 +1,50 @@
-<p>cursos works!</p>
+<!-- ======= Breadcrumbs Section ======= -->
+<section class="breadcrumbs">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center">
+        </div>
+    </div>
+</section>
+<!-- End Breadcrumbs Section -->
+
+
+<section class="inner-page">
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Cursos</h2>
+                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi
+                    quidem hic quas.</p>
+            </div>
+
+            <div class="row">
+                <div [routerLink]="['/curso-detalhes', obj.id]" class="card mb-3 col-5 m-2" *ngFor="let obj of cursos" style="max-width: 540px;">
+                    <div class="row g-0">
+
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{obj.nome}}</h5>
+                                <p class="card-text">
+                                    This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                                </p>
+                                <p class="card-text">
+                                    <small class="text-muted">
+                                Clique para saber mais
+                              </small>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <img [src]="obj.foto" class="img-fluid rounded-start" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Services Section -->
+
+</section>
