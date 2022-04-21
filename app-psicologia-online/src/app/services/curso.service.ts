@@ -18,7 +18,7 @@ export class CursoService {
     {
       id: 1,
       nome: 'Ressonância Harmônica',
-      descricao: 'O Curso de Ressonância Harmônica tiliza ondas de informação que limpam gradativamente crenças limitantes e inserem no indivíduo novas informações para alavancar seu crescimento, em todas as áreas. ',
+      descricao: 'O Curso de Ressonância Harmônica utiliza ondas de informação que limpam gradativamente crenças limitantes e inserem no indivíduo novas informações para alavancar seu crescimento, em todas as áreas. ',
       preco: 1050.00,
       foto: './../../assets/img/curso-ressonancia.jpg'
     },
@@ -32,7 +32,7 @@ export class CursoService {
     {
       id: 3,
       nome: 'Biografia de Neville Goddard',
-      descricao: 'Neville Goddard dedicou-se a ilustrar os ensinamentos da verdade psicológica escondida nos ensinamentos bíblicos, e despertar a consciência do verdadeiro significado que os antigos pretenderam trazer ao mundo, mas que precisaram ocultar a verdadeira mensagem apenas àqueles que alcançaram o entendimento, durante uma época de tantas guerras e perseguições, em meio à antiguidade.',
+      descricao: 'Neville Goddard dedicou-se a ilustrar os ensinamentos da verdade psicológica escondida nos ensinamentos bíblicos, e despertar a consciência do verdadeiro significado que os antigos pretenderam trazer ao mundo...',
       preco: 1200.00,
       foto: './../../assets/img/curso-neville.jpg'
     }
