@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { DepartmentsComponent } from './departments/departments.component';
 import { DepartamentsComponent } from './departaments/departaments.component';
 import { SpecialistsComponent } from './specialists/specialists.component';
 import { ContactComponent } from './contact/contact.component';
@@ -19,7 +18,6 @@ import { CursosComponent } from './cursos/cursos.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    DepartmentsComponent,
     DepartamentsComponent,
     SpecialistsComponent,
     ContactComponent,

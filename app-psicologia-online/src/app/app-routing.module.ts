@@ -43,7 +43,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'departments',
+    path: 'departaments',
     component: DepartamentsComponent
   },
   {
