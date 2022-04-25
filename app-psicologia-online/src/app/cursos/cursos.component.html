@@ -1,23 +1,19 @@
 <p>cursos component works!</p>
 
 
-<p>Lista de cursos do portal {{nomePortal}}
-</p>
-
+<p>Lista de cursos do portal {{nomePortal}}</p>
 <ul>
     <li *ngFor="let curso of cursos">
-        <!-- declarei uma variavel curso que vai receber cada posição do array de cursos -->
-        <!-- nesta expressão estou declarando uma variável local, como se fosse: (https://www.youtube.com/watch?v=bBFScNfW904) -->
         {{ curso}}
-        <!-- interpolação que vai fazer a saida da variavel curso -->
-
     </li>
 </ul>
+<!-- declarei uma variavel curso que vai receber cada posição do array de cursos -->
+<!-- nesta expressão estou declarando uma variável local, como se fosse: (https://www.youtube.com/watch?v=bBFScNfW904) -->
+<!-- interpolação que vai fazer a saida da variavel curso -->
 
 
 
-<app-curso-detalhe>
-</app-curso-detalhe>
 
 
+<app-curso-detalhe></app-curso-detalhe>
 <!-- o app curso detalhes é um componente privado que só pertence ao meu módulo de cursos! -->
