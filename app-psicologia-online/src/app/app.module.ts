@@ -7,8 +7,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 
-import { SpecialistsModule } from './specialists/specialists.module';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -25,6 +23,9 @@ import { CursoNovoComponent } from './curso-novo/curso-novo.component';
 import { CursoEditComponent } from './curso-edit/curso-edit.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { AuthService } from './login/auth.service';
+import { SpecialistsDetalhesComponent } from './specialists-detalhes/specialists-detalhes.component';
+import { SpecialistsEditComponent } from './specialists-edit/specialists-edit.component';
+import { SpecialistsNovoComponent } from './specialists-novo/specialists-novo.component';
 
 
 
@@ -44,7 +45,10 @@ import { AuthService } from './login/auth.service';
     CursoDetalhesComponent,
     CursoNovoComponent,
     CursoEditComponent,
-    CursosComponent
+    CursosComponent,
+    SpecialistsDetalhesComponent,
+    SpecialistsEditComponent,
+    SpecialistsNovoComponent
   ],
 
   imports: [      // modulos que quero importar
