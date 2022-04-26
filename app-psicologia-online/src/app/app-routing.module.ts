@@ -8,7 +8,10 @@ import { ContactComponent } from './contact/contact.component';
 import { SpecialistsComponent } from './specialists/specialists.component';
 import { DepartamentsComponent } from './departaments/departaments.component';
 import { AppointmentComponent } from './appointment/appointment.component';
-import { CursosComponent } from './cursos/cursos.component';
+import { CursosComponent } from 'src/app/cursos/cursos.component';
+import { CursoDetalhesComponent } from 'src/app/curso-detalhes/curso-detalhes.component';
+import { CursoNovoComponent } from 'src/app/curso-novo/curso-novo.component';
+import { CursoEditComponent } from 'src/app/curso-edit/curso-edit.component';
 
 const routes: Routes = [
   {
@@ -53,6 +56,18 @@ const routes: Routes = [
   {
     path: 'cursos',
     component: CursosComponent
+  },
+  {
+    path: 'curso-detalhes/:id',
+    component: CursoDetalhesComponent
+  },
+  {
+    path: 'curso-novo',
+    component: CursoNovoComponent
+  },
+  {
+    path: 'curso-edit/:id',
+    component: CursoEditComponent
   }
 
 

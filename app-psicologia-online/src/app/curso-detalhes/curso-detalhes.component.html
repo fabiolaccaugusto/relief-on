@@ -1,0 +1,36 @@
+<form>
+    <div class="mb-3 text-center">
+        <img [src]="curso.foto" width="300px">
+    </div>
+
+    <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome" [ngModel]="curso.nome" readonly>
+    </div>
+
+    <div class="mb-3">
+        <label for="preco" class="form-label">Preço</label>
+        <input type="number" class="form-control" id="preco" name="preco" [ngModel]="curso.preco" readonly>
+    </div>
+
+    <div class="mb-3">
+        <label for="descricao" class="form-label">Descrição</label><br>
+        <textarea class="form-control" name="descricao" id="descricao" cols="30" rows="5" [ngModel]="curso.descricao" readonly></textarea>
+    </div>
+
+    <div class="row">
+        <div class="d-grid col-6">
+            <button [routerLink]="['/curso-edit', curso.id]" type="button" class="btn btn-warning btn-lg">
+        Editar
+      </button>
+        </div>
+
+        <div class="d-grid col-6">
+            <button type="button" class="btn btn-primary btn-lg">
+        Comprar
+      </button>
+        </div>
+    </div>
+
+
+</form>

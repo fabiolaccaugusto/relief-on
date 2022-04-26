@@ -1,19 +1,30 @@
-<p>cursos component works!</p>
+<section class="container"> </section>
 
 
-<p>Lista de cursos do portal {{nomePortal}}</p>
-<ul>
-    <li *ngFor="let curso of cursos">
-        {{ curso}}
-    </li>
-</ul>
-<!-- declarei uma variavel curso que vai receber cada posição do array de cursos -->
-<!-- nesta expressão estou declarando uma variável local, como se fosse: (https://www.youtube.com/watch?v=bBFScNfW904) -->
-<!-- interpolação que vai fazer a saida da variavel curso -->
+<section id="departments" class="departments">
+    <div class="container">
 
+        <div class="section-title">
+            <h2>Cursos</h2>
+        </div>
 
+        <div class="row">
+            <div [routerLink]="['/curso-detalhes', obj.id]" class="card mb-3 col-8 m-2" *ngFor="let obj of cursos" style="max-width: 540px;">
+                <div class="col-md-12">
+                    <div class="card-body">
+                        <h5 class="card-title">{{obj.nome}}</h5>
+                        <p class="card-text">
+                            {{obj.descricao}}
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                {{obj.preco}}
+                                  </small>
+                        </p>
+                    </div>
+                </div>
 
-
-
-<app-curso-detalhe></app-curso-detalhe>
-<!-- o app curso detalhes é um componente privado que só pertence ao meu módulo de cursos! -->
+            </div>
+        </div>
+    </div>
+</section>
