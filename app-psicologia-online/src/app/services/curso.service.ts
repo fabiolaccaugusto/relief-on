@@ -10,30 +10,30 @@ export class CursoService {
   public cursos: Array<Curso> = [
     {
       id: 0,
-      nome: 'Desenvolvimento Web com Angular 13',
-      descricao: 'Curso muito bom, muito divertido, muito legal',
-      preco: 22.90,
+      nome: 'FIlosofia Hermética',
+      descricao: 'Conhecimento milenar da filosofia Hemética...',
+      preco: 1500.00,
       foto: './../../assets/img/curso-foto-teste.jpg'
     },
     {
       id: 1,
-      nome: 'Criação de APIs com Node.js',
-      descricao: 'Curso muito bom, muito divertido, muito legal',
-      preco: 22.90,
+      nome: 'O Subconsciente',
+      descricao: 'Saiba mais sobre o poder do subconsciente...',
+      preco: 1400.00,
       foto: './../../assets/img/curso-foto-teste.jpg'
     },
     {
       id: 2,
-      nome: 'Python de A a Z',
-      descricao: 'Curso muito bom, muito divertido, muito legal',
-      preco: 22.90,
+      nome: 'Habilidades Mentais',
+      descricao: 'Use corretamente as 6 habilidades mentais...',
+      preco: 1300.00,
       foto: './../../assets/img/curso-foto-teste.jpg'
     },
     {
       id: 3,
-      nome: 'Spring Boot 2.2',
-      descricao: 'Curso muito bom, muito divertido, muito legal',
-      preco: 22.90,
+      nome: 'Leis Universais',
+      descricao: 'Viva em harmonia com as Leis Universais...',
+      preco: 1300.00,
       foto: './../../assets/img/curso-foto-teste.jpg'
     }
   ];

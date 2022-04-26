@@ -7,23 +7,16 @@
         <div class="section-title">
             <h2>Cursos</h2>
         </div>
-
         <div class="row">
-            <div [routerLink]="['/curso-detalhes', obj.id]" class="card mb-3 col-8 m-2" *ngFor="let obj of cursos" style="max-width: 540px;">
-                <div class="col-md-12">
-                    <div class="card-body">
-                        <h5 class="card-title">{{obj.nome}}</h5>
-                        <p class="card-text">
-                            {{obj.descricao}}
-                        </p>
-                        <p class="card-text">
-                            <small class="text-muted">
-                                {{obj.preco}}
-                                  </small>
-                        </p>
-                    </div>
+            <div class="card-text-center" *ngFor="let obj of cursos" style="border: 0px; width: 15rem;">
+                <!-- <img src=" " class="card-img-top " alt=" "> -->
+                <div class="card-body" style="margin: 3%; padding: 3%;">
+                    <h5 class="card-title ">{{obj.nome}}</h5>
+                    <p class="card-text ">{{obj.descricao}}</p>
+                    <p class="card-text ">
+                        <small class="text-muted ">Valor: R$ {{obj.preco}}</small></p>
+                    <div [routerLink]="[ '/curso-detalhes', obj.id] " class="btn btn-primary ">Saiba mais</div>
                 </div>
-
             </div>
         </div>
     </div>
