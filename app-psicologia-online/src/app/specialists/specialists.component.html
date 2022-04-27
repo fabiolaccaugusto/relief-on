@@ -10,8 +10,8 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-6 mt-4 mt-lg-0">
-                <div class="member d-flex align-items-start" *ngFor="let obj of Specialists">
+            <div class="col-lg-6 mt-4 mt-lg-4 mx-auto" *ngFor="let obj of Specialists">
+                <div class="member d-flex align-items-start">
                     <div class="pic">
                         <a [routerLink]="['/specialists-detalhes', obj.id]"><img [src]="obj.foto" class="img-fluid" alt=""></a>
                     </div>
