@@ -27,6 +27,7 @@ import { SpecialistsEditComponent } from './specialists-edit/specialists-edit.co
 import { SpecialistsNovoComponent } from './specialists-novo/specialists-novo.component';
 import { SpecialistsService } from './services/specialists.service';
 import { AuthService } from './login/auth.service';
+import { CursoService } from './services/curso.service';
 
 
 
@@ -50,7 +51,7 @@ import { AuthService } from './login/auth.service';
     SpecialistsDetalhesComponent,
     SpecialistsEditComponent,
     SpecialistsNovoComponent
-    ],
+       ],
 
   imports: [      // modulos que quero importar
     BrowserModule,

@@ -19,7 +19,7 @@ export class SpecialistsDetalhesComponent implements OnInit {
     const codigo: number = Number(this.rotaAtiva.snapshot.paramMap.get('id'));
     console.log(codigo);
 
-  //  this.Specialists = this.specialistsServ.get(codigo);
+   this.Specialists = this.specialistsServ.get(codigo);
   }
 
 }

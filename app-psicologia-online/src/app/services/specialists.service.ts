@@ -10,17 +10,31 @@ export class SpecialistsService {
   public Specialists: Array<Specialists> = [
     {
       id: 0,
-      nome: 'FIlosofia Hermética',
-      descricao: 'Conhecimento milenar da filosofia Hemética...',
-      preco: 1500.00,
-      foto: './../../assets/img/curso-foto-teste.jpg'
+      nome: 'Fabíola Augusto',
+      descricao: 'Psiquiatra',
+      preco: 150.00,
+      foto: './../../assets/img/doctors/doctors-2.jpg'
     },
     {
       id: 1,
-      nome: 'O Subconsciente',
-      descricao: 'Saiba mais sobre o poder do subconsciente...',
-      preco: 1400.00,
-      foto: './../../assets/img/curso-foto-teste.jpg'
+      nome: 'William Júnior',
+      descricao: 'Psicanalista',
+      preco: 150.00,
+      foto: './../../assets/img/doctors/doctors-1.jpg'
+    },
+    {
+      id: 2,
+      nome: 'José Maurício',
+      descricao: 'Psicólogo Educacional',
+      preco: 150.00,
+      foto: './../../assets/img/doctors/doctors-3.jpg'
+    },
+    {
+      id: 3,
+      nome: 'Bárbara Augusto',
+      descricao: 'Psicóloga Humanista',
+      preco: 150.00,
+      foto: './../../assets/img/doctors/doctors-4.jpg'
     },
 
   ];

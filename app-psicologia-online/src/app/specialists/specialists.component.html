@@ -12,11 +12,13 @@
         <div class="row">
             <div class="col-lg-6 mt-4 mt-lg-0">
                 <div class="member d-flex align-items-start" *ngFor="let obj of Specialists">
-                    <div class="pic"><img src="" class="img-fluid" alt=""></div>
+                    <div class="pic">
+                        <a [routerLink]="['/specialists-detalhes', obj.id]"><img [src]="obj.foto" class="img-fluid" alt=""></a>
+                    </div>
                     <div class="member-info">
                         <h4>{{obj.nome}}</h4>
-                        <span>Organizational Psychology</span>
-                        <p>{{obj.descricao}}</p>
+                        <span>{{obj.descricao}}</span>
+                        <p>Valor da consulta: R$ {{obj.preco}}</p>
                         <div class="social">
                             <a href=""><i class="ri-twitter-fill"></i></a>
                             <a href=""><i class="ri-facebook-fill"></i></a>
@@ -26,59 +28,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="member d-flex align-items-start">
-                    <div class="pic"><img src="assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
-                    <div class="member-info">
-                        <h4>William Júnior</h4>
-                        <span>Educational Psychology</span>
-                        <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-                        <div class="social">
-                            <a href=""><i class="ri-twitter-fill"></i></a>
-                            <a href=""><i class="ri-facebook-fill"></i></a>
-                            <a href=""><i class="ri-instagram-fill"></i></a>
-                            <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="col-lg-6 mt-4">
-                <div class="member d-flex align-items-start">
-                    <div class="pic"><img src="assets/img/doctors/doctors-3.jpg" class="img-fluid" alt=""></div>
-                    <div class="member-info">
-                        <h4>José Maurício</h4>
-                        <span>Social Psychology</span>
-                        <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-                        <div class="social">
-                            <a href=""><i class="ri-twitter-fill"></i></a>
-                            <a href=""><i class="ri-facebook-fill"></i></a>
-                            <a href=""><i class="ri-instagram-fill"></i></a>
-                            <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6 mt-4">
-                <div class="member d-flex align-items-start">
-                    <div class="pic"><img src="assets/img/doctors/doctors-4.jpg" class="img-fluid" alt=""></div>
-                    <div class="member-info">
-                        <h4>Bárbara Cristina</h4>
-                        <span>Neuropsychology</span>
-                        <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-                        <div class="social">
-                            <a href=""><i class="ri-twitter-fill"></i></a>
-                            <a href=""><i class="ri-facebook-fill"></i></a>
-                            <a href=""><i class="ri-instagram-fill"></i></a>
-                            <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
 
     </div>
