@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app-psicologia-online';
-  mostrarMenu: boolean = false;
-  constructor(private authService: AuthService) {
+   constructor() {
   }
 }

@@ -22,16 +22,17 @@ import { CursoDetalhesComponent } from './curso-detalhes/curso-detalhes.componen
 import { CursoNovoComponent } from './curso-novo/curso-novo.component';
 import { CursoEditComponent } from './curso-edit/curso-edit.component';
 import { CursosComponent } from './cursos/cursos.component';
-import { AuthService } from './login/auth.service';
 import { SpecialistsDetalhesComponent } from './specialists-detalhes/specialists-detalhes.component';
 import { SpecialistsEditComponent } from './specialists-edit/specialists-edit.component';
 import { SpecialistsNovoComponent } from './specialists-novo/specialists-novo.component';
+import { SpecialistsService } from './services/specialists.service';
+import { AuthService } from './login/auth.service';
 
 
 
 
 @NgModule({
-  declarations: [ 
+  declarations: [
     AppComponent,
     HomeComponent,
     DepartamentsComponent,
@@ -49,7 +50,7 @@ import { SpecialistsNovoComponent } from './specialists-novo/specialists-novo.co
     SpecialistsDetalhesComponent,
     SpecialistsEditComponent,
     SpecialistsNovoComponent
-  ],
+    ],
 
   imports: [      // modulos que quero importar
     BrowserModule,
@@ -57,15 +58,17 @@ import { SpecialistsNovoComponent } from './specialists-novo/specialists-novo.co
     FormsModule,
 
     //SpecialistsModule   com o modulo importado, tudo que eu tiver dentro do exports, eu consigo utilizar dentro de qualquer outro componente que estiver declarado aqui.
-   
+
   ],
   exports: [
     //SpecialistsModule,
-    
+
     // dizer para o angular quais sao as declarações desse modulo aqui (componentes, diretivas ou pipes)
   ],
   providers: [
+    SpecialistsService,
     AuthService
+
   ],           // aqui nos colocamos os serviços que vão ficar disponíveis para todos os componentes declarados neste módulo aqui.
   bootstrap: [AppComponent]   // coloco ele aqui pq é o componente que vai ser instanciado quando executar a aplicação, neste caso é o componente que vai servir como container do meu projeto. Neste caso, como estou trabalhando com SPA, single page aplication, o app é de uma página só, eu instancio o AppComponent, que neste caso é o meu componente principal e todo o meu código da aplicação fica aqui (AppCompnent.html)
 

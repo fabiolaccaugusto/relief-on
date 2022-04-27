@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Specialists } from '../models/specialists.model';
 
 
-@Injectable({
+@Injectable({       //responsavel por injetar o serviço dentro do componente
   providedIn: 'root'
 })
 export class SpecialistsService {
