@@ -1,1 +1,53 @@
-<p>specialists-edit works!</p>
+<section class="container"> </section>
+
+
+<section id="departments" class="departments">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Edição do perfil do Especialista</h2>
+        </div>
+
+        <div class="row">
+            <form>
+                <div class="mb-3 text-center">
+                    <img [src]="Specialists.foto" width="300px">
+                </div>
+
+                <div class="mb-3">
+                    <label for="foto" class="form-label">Foto</label>
+                    <input type="text" class="form-control" id="foto" name="foto" [(ngModel)]="Specialists.foto">
+                </div>
+
+                <div class="mb-3">
+                    <label for="codigo" class="form-label">Código</label>
+                    <input type="number" class="form-control" id="codigo" name="codigo" [ngModel]="Specialists.id" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="Specialists.nome">
+                </div>
+
+                <div class="mb-3">
+                    <label for="preco" class="form-label">Preço</label>
+                    <input type="number" class="form-control" id="preco" name="preco" [(ngModel)]="Specialists.preco">
+                </div>
+
+                <div class="mb-3">
+                    <label for="descricao" class="form-label">Descrição</label><br>
+                    <textarea class="form-control" name="descricao" id="descricao" cols="30" rows="5" [(ngModel)]="Specialists.descricao"></textarea>
+                </div>
+
+
+                <div class="row">
+                    <div class="d-grid col-12">
+                        <button (click)="salvar()" type="button" class="btn btn-success btn-lg">
+                            Salvar alterações
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

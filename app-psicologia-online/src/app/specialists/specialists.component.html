@@ -11,12 +11,12 @@
 
         <div class="row">
             <div class="col-lg-6 mt-4 mt-lg-0">
-                <div class="member d-flex align-items-start">
-                    <div class="pic"><img src="assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
+                <div class="member d-flex align-items-start" *ngFor="let obj of Specialists">
+                    <div class="pic"><img src="" class="img-fluid" alt=""></div>
                     <div class="member-info">
-                        <h4>Fabíola Augusto</h4>
+                        <h4>{{obj.nome}}</h4>
                         <span>Organizational Psychology</span>
-                        <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
+                        <p>{{obj.descricao}}</p>
                         <div class="social">
                             <a href=""><i class="ri-twitter-fill"></i></a>
                             <a href=""><i class="ri-facebook-fill"></i></a>

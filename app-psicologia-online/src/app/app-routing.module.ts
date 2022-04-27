@@ -12,6 +12,9 @@ import { CursosComponent } from 'src/app/cursos/cursos.component';
 import { CursoDetalhesComponent } from 'src/app/curso-detalhes/curso-detalhes.component';
 import { CursoNovoComponent } from 'src/app/curso-novo/curso-novo.component';
 import { CursoEditComponent } from 'src/app/curso-edit/curso-edit.component';
+import { SpecialistsDetalhesComponent } from './specialists-detalhes/specialists-detalhes.component';
+import { SpecialistsEditComponent } from './specialists-edit/specialists-edit.component';
+import { SpecialistsNovoComponent } from './specialists-novo/specialists-novo.component';
 
 const routes: Routes = [
   {
@@ -68,10 +71,20 @@ const routes: Routes = [
   {
     path: 'curso-edit/:id',
     component: CursoEditComponent
+  },
+  {
+    path: 'specialists-detalhes/:id',
+    component: SpecialistsDetalhesComponent
+  },
+  {
+    path: 'specialists-novo',
+    component: SpecialistsNovoComponent
+  },
+  {
+    path: 'specialists-edit/:id',
+    component: SpecialistsEditComponent
   }
 
-
-  
 ];
 
 @NgModule({

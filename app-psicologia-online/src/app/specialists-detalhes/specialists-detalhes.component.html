@@ -1,1 +1,47 @@
-<p>specialists-detalhes works!</p>
+<section class="container"> </section>
+
+
+<section id="departments" class="departments">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Especialistas</h2>
+        </div>
+
+        <div class="row">
+            <form>
+                <div class="mb-3 text-center">
+                    <img [src]="Specialists.foto" width="300px">
+                </div>
+
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" [ngModel]="Specialists.nome" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="preco" class="form-label">Preço</label>
+                    <input type="number" class="form-control" id="preco" name="preco" [ngModel]="Specialists.preco" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label for="descricao" class="form-label">Descrição</label><br>
+                    <textarea class="form-control" name="descricao" id="descricao" cols="30" rows="5" [ngModel]="Specialists.descricao" readonly></textarea>
+                </div>
+
+                <div class="row">
+                    <div class="d-grid col-6">
+                        <button [routerLink]="['/specialists-edit', Specialists.id]" type="button" class="btn btn-warning btn-lg">
+                            Editar 
+                        </button>
+                    </div>
+                    <div class="d-grid col-6">
+                        <button [routerLink]="['/specialists-edit', Specialists.id]" type="button" class="btn btn-primary btn-lg">
+                       Agendar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
