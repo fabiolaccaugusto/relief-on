@@ -1,7 +1,7 @@
 <section class="container"> </section>
 
 
-<section id="departments" class="departments">
+<section id="doctors" class="doctors">
     <div class="container">
 
         <div class="section-title">
@@ -9,20 +9,18 @@
         </div>
 
         <div class="row">
-            <div class="card" *ngFor="let obj of Curso" style="width: 18rem;">
-                <div class="col-sm-12">
-                    <div class="card">
-
-                        <div class="card-body" style="margin: 3%; padding: 3%;">
-                            <img [src]="obj.foto" class="card-img-top " alt=" ">
-                            <h5 class="card-title ">{{obj.nome}}</h5>
-                            <p class="card-text ">{{obj.descricao}}</p>
-                            <p class="card-text ">
-                                <small class="text-muted ">Valor: R$ {{obj.preco}}</small>
-                            </p>
-                            <a [routerLink]="['/curso-detalhes', obj.id]" routerLinkActive="active"><button
-                                class="btn btn-primary btn-lg" type="button">Saiba mais</button></a>
-                        </div>
+            <div class="col-lg-6 mt-4 mt-lg-4 mx-auto" *ngFor="let obj of Curso">
+                <div class="member d-flex align-items-start">
+                    <div class="pic">
+                        <a [routerLink]="['/curso-detalhes', obj.id]"><img [src]="obj.foto" class="img-fluid" alt=""></a>
+                    </div>
+                    <div class="member-info">
+                        <h4>{{obj.nome}}</h4>
+                        <span>{{obj.descricao}}</span>
+                        <p>Valor do curso: R$ {{obj.preco}}</p>
+                        <br>
+                        <a [routerLink]="['/curso-detalhes', obj.id]" routerLinkActive="active"><button
+                            class="btn btn-primary btn-sm" type="button">Saiba mais</button></a>
                     </div>
                 </div>
             </div>

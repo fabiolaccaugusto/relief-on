@@ -10,31 +10,31 @@ export class CursoService {
   public cursos: Array<Curso> = [
     {
       id: 0,
-      nome: 'FIlosofia Hermética',
+      nome: 'Filosofia Hermética',
       descricao: 'Conhecimento milenar da filosofia Hemética...',
       preco: 1500.00,
-      foto: './../../assets/img/curso-foto-teste.jpg'
+      foto: './../../assets/img/6.jpeg'
     },
     {
       id: 1,
       nome: 'O Subconsciente',
       descricao: 'Saiba mais sobre o poder do subconsciente...',
       preco: 1400.00,
-      foto: './../../assets/img/curso-foto-teste.jpg'
+      foto: './../../assets/img/12.jpg'
     },
     {
       id: 2,
       nome: 'Habilidades Mentais',
       descricao: 'Use corretamente as 6 habilidades mentais...',
       preco: 1300.00,
-      foto: './../../assets/img/curso-foto-teste.jpg'
+      foto: './../../assets/img/curso-ressonancia.jpg'
     },
     {
       id: 3,
       nome: 'Leis Universais',
       descricao: 'Viva em harmonia com as Leis Universais...',
       preco: 1300.00,
-      foto: './../../assets/img/curso-foto-teste.jpg'
+      foto: './../../assets/img/images.jpeg'
     }
   ];
 
