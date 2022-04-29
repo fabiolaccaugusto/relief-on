@@ -26,7 +26,7 @@ import { SpecialistsDetalhesComponent } from './specialists-detalhes/specialists
 import { SpecialistsEditComponent } from './specialists-edit/specialists-edit.component';
 import { SpecialistsNovoComponent } from './specialists-novo/specialists-novo.component';
 import { SpecialistsService } from './services/specialists.service';
-import { AuthService } from './login/auth.service';
+import { AuthService } from './services/auth.service';
 import { CursoService } from './services/curso.service';
 
 
@@ -68,7 +68,8 @@ import { CursoService } from './services/curso.service';
   ],
   providers: [
     SpecialistsService,
-    AuthService
+    AuthService,
+    CursoService
 
   ],           // aqui nos colocamos os serviços que vão ficar disponíveis para todos os componentes declarados neste módulo aqui.
   bootstrap: [AppComponent]   // coloco ele aqui pq é o componente que vai ser instanciado quando executar a aplicação, neste caso é o componente que vai servir como container do meu projeto. Neste caso, como estou trabalhando com SPA, single page aplication, o app é de uma página só, eu instancio o AppComponent, que neste caso é o meu componente principal e todo o meu código da aplicação fica aqui (AppCompnent.html)

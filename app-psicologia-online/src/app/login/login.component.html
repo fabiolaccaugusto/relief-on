@@ -1,10 +1,10 @@
 <section class="container"> </section>
-<!-- ======= Contact Section ======= -->
+
+<!-- ======= LOGIN ======= -->
 <section id="contact" class="contact">
     <div class="container">
         <div class="section-title">
             <h2>Login</h2>
-            <!-- <p>We want to hear from you</p> -->
         </div>
     </div>
     <div class="container">
@@ -12,15 +12,22 @@
         <body class="text-center">
             <form class="form-signin">
                 <!-- <img class="mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
-                <input [(ngModel)]="usuario.nome" type="text" id="usuario" class="form-control" placeholder="Usuário" required autofocus>
-                <label for="usuario" class="sr-only">Usuário</label>
+                <input [(ngModel)]="usuario.nome" type="mail" id="usuario" class="form-control" placeholder="Email" required autofocus>
+                <label for="usuario" class="sr-only"></label>
 
                 <br>
                 <input [(ngModel)]="usuario.senha" id="senha" type="password" class="form-control" placeholder="Senha" required>
-                <label for="senha" class="sr-only">Senha</label>
+                <label for="senha" class="sr-only"></label>
 
                 <br><button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+                <br><br>
+                <button type="button" class="btn btn-link"><a [routerLink]="['/home']">Esqueci minha senha</a></button>
+                <br>
+                <button type="button" class="btn btn-link"><a [routerLink]="['/home']">Criar conta</a></button>
+
+
             </form>
+
         </body>
     </div>
 </section>

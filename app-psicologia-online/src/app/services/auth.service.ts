@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Injectable, EventEmitter } from '@angular/core';
 
-import { Usuario } from './usuario';
+import { Usuario } from '../login/usuario';
 
 
 @Injectable()
