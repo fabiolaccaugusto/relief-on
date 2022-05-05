@@ -5,7 +5,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,6 +57,7 @@ import { CursoService } from './services/curso.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
 
     //SpecialistsModule   com o modulo importado, tudo que eu tiver dentro do exports, eu consigo utilizar dentro de qualquer outro componente que estiver declarado aqui.
 

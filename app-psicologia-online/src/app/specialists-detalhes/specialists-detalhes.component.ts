@@ -15,13 +15,15 @@ export class SpecialistsDetalhesComponent implements OnInit {
   constructor(private rotaAtiva: ActivatedRoute,
               private specialistsServ: SpecialistsService) { }
 
-  ngOnInit(): void {
-    const codigo: number = Number(this.rotaAtiva.snapshot.paramMap.get('id'));
-    console.log(codigo);
-
-   this.Specialists = this.specialistsServ.get(codigo);
+              ngOnInit(): void {
+                const codigo = Number(this.rotaAtiva.snapshot.paramMap.get('id'));
+                console.log(codigo);
+                this.specialistsServ.get(codigo)
+                .subscribe((Specialists: Specialists)=>{
+                  this.Specialists = Specialists;
+                  console.log(Specialists);
+                });
   }
-
 }
 
 

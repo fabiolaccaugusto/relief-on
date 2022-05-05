@@ -1,77 +1,47 @@
 import { Injectable } from '@angular/core';
-
+import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Curso } from '../models/curso.model';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CursoService {
+  private urlBase: string = 'http://localhost:3000/cursos/';
+  
+  constructor(private httpCliente: HttpClient) { }
 
-  public cursos: Array<Curso> = [
-    {
-      id: 0,
-      nome: 'Filosofia Hermética',
-      descricao: 'Conhecimento milenar da filosofia Hemética...',
-      preco: 1500.00,
-      foto: './../../assets/img/6.jpeg'
-    },
-    {
-      id: 1,
-      nome: 'O Subconsciente',
-      descricao: 'Saiba mais sobre o poder do subconsciente...',
-      preco: 1400.00,
-      foto: './../../assets/img/12.jpg'
-    },
-    {
-      id: 2,
-      nome: 'Habilidades Mentais',
-      descricao: 'Use corretamente as 6 habilidades mentais...',
-      preco: 1300.00,
-      foto: './../../assets/img/curso-ressonancia.jpg'
-    },
-    {
-      id: 3,
-      nome: 'Leis Universais',
-      descricao: 'Viva em harmonia com as Leis Universais...',
-      preco: 1300.00,
-      foto: './../../assets/img/images.jpeg'
-    }
-  ];
-
-  constructor() { }
-
-  public getAll(): Array<Curso> {
-    return this.cursos;
+  public getAll(): Observable<Curso[]> {
+    return this.httpCliente.get<Curso[]>(this.urlBase);
   }
 
-  public get(id: number): Curso {
-    for(let obj of this.cursos) {
-      if (id === obj.id) {
-        return obj;
-      }
-    }
-
-    return new Curso();
+  public get(id: number): Observable<Curso> {
+    return this.httpCliente.get<Curso>(this.urlBase+'/'+id);
   }
 
   public add(curso: Curso) {
-    curso.id = this.cursos.length;
-    this.cursos.push(curso);
+    const cursoPost = JSON.stringify(curso);
+    return this.httpCliente.post(this.urlBase, cursoPost, httpOptions);
+    
   }
 
   public edit(curso: Curso) {
-    for(let obj of this.cursos) {
-      if (curso.id === obj.id) {
-        obj = curso;
-        break;
-      }
-    }
+    const cursoPut = JSON.stringify(curso);
+    const id = curso.id;
+    return this.httpCliente
+    .put(this.urlBase+'/'+id, cursoPut, httpOptions);
+    
   }
 
   public delete(id: number) {
+    return this.httpCliente.delete(this.urlBase+''+id);
 
-   let posicao = this.cursos.findIndex((obj)=> obj.id === id);
-
-   this.cursos.splice(posicao, 1);
   }
 }

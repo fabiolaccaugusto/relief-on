@@ -10,12 +10,16 @@ import { CursoService } from 'src/app/services/curso.service';
   styleUrls: ['./cursos.component.css']
 })
 export class CursosComponent implements OnInit {
-  public Curso: Array<Curso> = [ ];
+  public cursos: Array<Curso> = [ ];
 
   constructor(private cursoServ: CursoService) { }
 
   ngOnInit(): void {
-    this.Curso = this.cursoServ.getAll();
+    this.cursoServ.getAll().subscribe((cursos: Array<Curso>)=>{
+      this.cursos = cursos;
+
+      console.log(cursos);
+    });
   }
 
 }

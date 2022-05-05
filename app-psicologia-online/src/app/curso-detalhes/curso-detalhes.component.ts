@@ -15,10 +15,13 @@ export class CursoDetalhesComponent implements OnInit {
   constructor(private rotaAtiva: ActivatedRoute,
               private cursoServ: CursoService) { }
 
-  ngOnInit(): void {
-    const codigo: number = Number(this.rotaAtiva.snapshot.paramMap.get('id'));
-    console.log(codigo);
-
-   this.curso = this.cursoServ.get(codigo);
+              ngOnInit(): void {
+                const codigo = Number(this.rotaAtiva.snapshot.paramMap.get('id'));
+                console.log(codigo);
+                this.cursoServ.get(codigo)
+                .subscribe((curso: Curso)=>{
+                  this.curso = curso;
+                  console.log(curso);
+                });
   }
 }

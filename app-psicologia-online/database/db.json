@@ -1,0 +1,16 @@
+{
+    "cursos": [{
+        "id": 2,
+        "nome": "Fabíola Augusto",
+        "descricao": "carissimo",
+        "preco": 1000,
+        "foto": ""
+    }],
+    "specialists": [{
+        "id": 1,
+        "nome": "Ferrari",
+        "descricao": "Carro de luxo.",
+        "preco": 3000000,
+        "foto": ""
+    }]
+}

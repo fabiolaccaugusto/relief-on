@@ -19,7 +19,12 @@ export class CursoNovoComponent implements OnInit {
   }
 
   public cadastrar() {
-    this.cursoServ.add(this.curso);
-    this.rota.navigate(['/home']);
+    this.cursoServ.add(this.curso).subscribe((resposta)=>{
+      console.log(resposta);
+
+
+       this.rota.navigate(['/cursos']);
+    });
+
   }
 }

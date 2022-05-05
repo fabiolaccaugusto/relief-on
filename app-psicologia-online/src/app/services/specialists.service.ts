@@ -1,78 +1,47 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Specialists } from '../models/specialists.model';
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
 
 @Injectable({       //responsavel por injetar o serviço dentro do componente
   providedIn: 'root'
 })
 export class SpecialistsService {
+  private urlBase: string = 'http://localhost:3000/specialists/';
+  
+  constructor(private httpCliente: HttpClient) { }
 
-  public Specialists: Array<Specialists> = [
-    {
-      id: 0,
-      nome: 'Fabíola Augusto',
-      descricao: 'Psiquiatra',
-      preco: 150.00,
-      foto: './../../assets/img/doctors/doctors-2.jpg'
-    },
-    {
-      id: 1,
-      nome: 'William Júnior',
-      descricao: 'Psicanalista',
-      preco: 150.00,
-      foto: './../../assets/img/doctors/doctors-1.jpg'
-    },
-    {
-      id: 2,
-      nome: 'José Maurício',
-      descricao: 'Psicólogo Educacional',
-      preco: 150.00,
-      foto: './../../assets/img/doctors/doctors-3.jpg'
-    },
-    {
-      id: 3,
-      nome: 'Bárbara Augusto',
-      descricao: 'Psicóloga Humanista',
-      preco: 150.00,
-      foto: './../../assets/img/doctors/doctors-4.jpg'
-    },
-
-  ];
-
-  constructor() { }
-
-  public getAll(): Array<Specialists> {
-    return this.Specialists;
+  public getAll(): Observable<Specialists[]> {
+    return this.httpCliente.get<Specialists[]>(this.urlBase);
   }
 
-  public get(id: number): Specialists {
-    for(let obj of this.Specialists) {
-      if (id === obj.id) {
-        return obj;
-      }
-    }
-
-    return new Specialists();
+  public get(id: number): Observable<Specialists> {
+    return this.httpCliente.get<Specialists>(this.urlBase+'/'+id);
   }
 
-  public add(Specialists: Specialists) {
-    Specialists.id = this.Specialists.length;
-    this.Specialists.push(Specialists);
+  public add(specialists: Specialists) {
+    const specialistsPost = JSON.stringify(specialists);
+    return this.httpCliente.post(this.urlBase, specialistsPost, httpOptions);
+    
   }
 
-  public edit(Specialists: Specialists) {
-    for(let obj of this.Specialists) {
-      if (Specialists.id === obj.id) {
-        obj = Specialists;
-        break;
-      }
-    }
+  public edit(specialists: Specialists) {
+    const specialistsPut = JSON.stringify(specialists);
+    const id = specialists.id;
+    return this.httpCliente
+    .put(this.urlBase+'/'+id, specialistsPut, httpOptions);
+    
   }
 
   public delete(id: number) {
+    return this.httpCliente.delete(this.urlBase+''+id);
 
-   let posicao = this.Specialists.findIndex((obj)=> obj.id === id);
-
-   this.Specialists.splice(posicao, 1);
   }
 }
+

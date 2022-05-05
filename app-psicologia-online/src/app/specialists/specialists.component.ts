@@ -10,12 +10,16 @@ import { SpecialistsService } from '../services/specialists.service';
   styleUrls: ['./specialists.component.css']
 })
 export class SpecialistsComponent implements OnInit {
-  public Specialists: Array<Specialists> = [ ];
+  public specialists: Array<Specialists> = [ ];
 
   constructor(private specialistsServ: SpecialistsService) { }
 
   ngOnInit(): void {
-    this.Specialists = this.specialistsServ.getAll();
+    this.specialistsServ.getAll().subscribe((specialists: Array<Specialists>)=>{
+      this.specialists = specialists;
+
+      console.log(specialists);
+    });
   }
 
 }
