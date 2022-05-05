@@ -25,8 +25,13 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="descricao" class="form-label">Descrição</label><br>
-                    <textarea class="form-control" name="descricao" id="descricao" cols="30" rows="5" [ngModel]="curso.descricao" readonly></textarea>
+                    <label for="apresentacao" class="form-label">Apresentacao</label>
+                    <textarea disabled class="form-control" name="apresentacao" id="apresentacao" cols="3" rows="1" readonly>{{curso.apresentacao}}</textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="descricao" class="form-label">Descrição</label>
+                    <textarea disabled class="form-control" name="descricao" id="descricao" cols="3" rows="5">{{curso.descricao}}</textarea>
                 </div>
 
                 <div class="row">
@@ -36,8 +41,8 @@
                         </button>
                     </div>
                     <div class="d-grid col-6">
-                        <button [routerLink]="['/login']" type="button" class="btn btn-primary btn-lg">
-                        Comprar curso
+                        <button [routerLink]="['/curso-novo']" type="button" class="btn btn-primary btn-lg">
+                        Adicionar novo curso
                         </button>
                     </div>
                 </div>

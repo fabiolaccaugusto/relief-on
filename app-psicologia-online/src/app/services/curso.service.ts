@@ -7,8 +7,7 @@ const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json'
   })
-}
-
+};
 
 @Injectable({
   providedIn: 'root'
@@ -23,25 +22,22 @@ export class CursoService {
   }
 
   public get(id: number): Observable<Curso> {
-    return this.httpCliente.get<Curso>(this.urlBase+'/'+id);
+    return this.httpCliente.get<Curso>(this.urlBase+id);
   }
 
   public add(curso: Curso) {
     const cursoPost = JSON.stringify(curso);
     return this.httpCliente.post(this.urlBase, cursoPost, httpOptions);
-    
   }
 
   public edit(curso: Curso) {
     const cursoPut = JSON.stringify(curso);
     const id = curso.id;
     return this.httpCliente
-    .put(this.urlBase+'/'+id, cursoPut, httpOptions);
-    
+    .put(this.urlBase+id, cursoPut, httpOptions);
   }
 
   public delete(id: number) {
-    return this.httpCliente.delete(this.urlBase+''+id);
-
+    return this.httpCliente.delete(this.urlBase+id);
   }
 }

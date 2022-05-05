@@ -12,19 +12,20 @@ import { Curso } from '../models/curso.model';
 export class CursoNovoComponent implements OnInit {
   public curso: Curso = new Curso();
 
-  constructor(private cursoServ: CursoService,
-              private rota: Router) { }
+  constructor(private rota: Router, private cursoServ: CursoService) { }
 
   ngOnInit(): void {
   }
 
   public cadastrar() {
+
     this.cursoServ.add(this.curso).subscribe((resposta)=>{
       console.log(resposta);
 
-
-       this.rota.navigate(['/cursos']);
+      this.rota.navigate(['/home']);
     });
 
+   
   }
+
 }
