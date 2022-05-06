@@ -11,33 +11,38 @@
         <div class="row">
             <form>
                 <div class="mb-3 text-center">
-                    <img [src]="Specialists.foto" width="300px">
+                    <img [src]="specialists.foto" width="300px">
                 </div>
 
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" name="nome" [ngModel]="Specialists.nome" readonly>
+                    <input type="text" class="form-control" id="nome" name="nome" [ngModel]="specialists.nome" readonly>
                 </div>
 
                 <div class="mb-3">
                     <label for="preco" class="form-label">Preço</label>
-                    <input type="number" class="form-control" id="preco" name="preco" [ngModel]="Specialists.preco" readonly>
+                    <input type="number" class="form-control" id="preco" name="preco" [ngModel]="specialists.preco" readonly>
                 </div>
 
                 <div class="mb-3">
-                    <label for="descricao" class="form-label">Descrição</label><br>
-                    <textarea class="form-control" name="descricao" id="descricao" cols="30" rows="5" [ngModel]="Specialists.descricao" readonly></textarea>
+                    <label for="area" class="form-label">Área de atuação</label>
+                    <textarea disabled class="form-control" name="area" id="area" cols="3" rows="1" readonly>{{specialists.area}}</textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="descricao" class="form-label">Descrição</label>
+                    <textarea disabled class="form-control" name="descricao" id="descricao" cols="3" rows="5">{{specialists.descricao}}</textarea>
                 </div>
 
                 <div class="row">
                     <div class="d-grid col-6">
-                        <button [routerLink]="['/specialists-edit', Specialists.id]" type="button" class="btn btn-warning btn-lg">
-                            Editar 
+                        <button [routerLink]="['/specialists-edit', specialists.id]" type="button" class="btn btn-warning btn-lg">
+                            Editar
                         </button>
                     </div>
                     <div class="d-grid col-6">
-                        <button [routerLink]="['/login']" type="button" class="btn btn-primary btn-lg">
-                       Agendar terapia
+                        <button [routerLink]="['/specialists-novo']" type="button" class="btn btn-primary btn-lg">
+                        Adicionar novo Especialista
                         </button>
                     </div>
                 </div>

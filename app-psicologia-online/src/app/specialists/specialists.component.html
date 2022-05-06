@@ -17,14 +17,11 @@
                     </div>
                     <div class="member-info">
                         <h4>{{obj.nome}}</h4>
-                        <span>{{obj.descricao}}</span>
-                        <p>Valor da consulta: R$ {{obj.preco}}</p>
-                        <div class="social">
-                            <a href=""><i class="ri-twitter-fill"></i></a>
-                            <a href=""><i class="ri-facebook-fill"></i></a>
-                            <a href=""><i class="ri-instagram-fill"></i></a>
-                            <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                        </div>
+                        <span>{{obj.area}}</span>
+                        <p>Valor da consulta: R$ {{obj.preco}},00</p>
+                        <br>
+                        <a [routerLink]="['/specialists-detalhes', obj.id]" routerLinkActive="active"><button
+                            class="btn btn-primary btn-sm" type="button">Saiba mais</button></a>
                     </div>
                 </div>
             </div>

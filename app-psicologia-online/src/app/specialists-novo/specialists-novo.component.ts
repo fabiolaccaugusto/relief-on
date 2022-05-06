@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { SpecialistsService } from './../services/specialists.service';
-import { Specialists } from '../models/specialists.model';
+import { SpecialistsService } from 'src/app/services/specialists.service';
+import { Specialists } from 'src/app/models/specialists.model';
 
 @Component({
   selector: 'app-specialists-novo',
@@ -10,20 +10,19 @@ import { Specialists } from '../models/specialists.model';
   styleUrls: ['./specialists-novo.component.css']
 })
 export class SpecialistsNovoComponent implements OnInit {
-  public Specialists: Specialists = new Specialists();
+  public specialists: Specialists = new Specialists();
 
-  constructor(private SpecialistsServ: SpecialistsService,
-              private rota: Router) { }
+  constructor(private rota: Router, private specialistsServ: SpecialistsService) { }
 
   ngOnInit(): void {
   }
 
   public cadastrar() {
-    this.SpecialistsServ.add(this.Specialists).subscribe((resposta)=>{
+    
+    this.specialistsServ.add(this.specialists).subscribe((resposta)=>{
       console.log(resposta);
 
-
-       this.rota.navigate(['/specialists']);
+      this.rota.navigate(['/specialists']);
     });
 
   }

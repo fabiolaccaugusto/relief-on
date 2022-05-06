@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Specialists } from '../models/specialists.model';
-import { SpecialistsService } from '../services/specialists.service';
-
+import { Specialists } from 'src/app/models/specialists.model';
+import { SpecialistsService } from 'src/app/services/specialists.service';
 
 @Component({
   selector: 'app-specialists',

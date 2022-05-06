@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { SpecialistsService } from './../services/specialists.service';
-import { Specialists } from '../models/specialists.model';
+import { SpecialistsService } from 'src/app/services/specialists.service';
+import { Specialists } from 'src/app/models/specialists.model';
 
 @Component({
   selector: 'app-specialists-detalhes',
@@ -10,7 +10,7 @@ import { Specialists } from '../models/specialists.model';
   styleUrls: ['./specialists-detalhes.component.css']
 })
 export class SpecialistsDetalhesComponent implements OnInit {
-  public Specialists: Specialists = new Specialists();
+  public specialists: Specialists = new Specialists();
 
   constructor(private rotaAtiva: ActivatedRoute,
               private specialistsServ: SpecialistsService) { }
@@ -19,11 +19,9 @@ export class SpecialistsDetalhesComponent implements OnInit {
                 const codigo = Number(this.rotaAtiva.snapshot.paramMap.get('id'));
                 console.log(codigo);
                 this.specialistsServ.get(codigo)
-                .subscribe((Specialists: Specialists)=>{
-                  this.Specialists = Specialists;
-                  console.log(Specialists);
+                .subscribe((specialists: Specialists)=>{
+                  this.specialists = specialists;
+                  console.log(specialists);
                 });
   }
 }
-
-

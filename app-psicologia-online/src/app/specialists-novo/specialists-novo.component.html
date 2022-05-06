@@ -11,36 +11,40 @@
         <div class="row">
             <form>
                 <div class="mb-3 text-center">
-                    <img [src]="Specialists.foto" width="300px">
+                    <img [src]="specialists.foto" width="300px">
                 </div>
 
                 <div class="mb-3">
                     <label for="foto" class="form-label">Foto</label>
-                    <input type="text" class="form-control" id="foto" name="foto" [(ngModel)]="Specialists.foto">
+                    <input type="text" class="form-control" id="foto" name="foto" [(ngModel)]="specialists.foto">
                 </div>
 
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="Specialists.nome">
+                    <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="specialists.nome">
                 </div>
 
                 <div class="mb-3">
                     <label for="preco" class="form-label">Preço</label>
-                    <input type="number" class="form-control" id="preco" name="preco" [(ngModel)]="Specialists.preco">
+                    <input type="number" class="form-control" id="preco" name="preco" [(ngModel)]="specialists.preco">
+                </div>
+
+                <div class="mb-3">
+                    <label for="area" class="form-label">Área de atuação</label><br>
+                    <textarea class="form-control" name="area" id="area" cols="30" rows="1" [(ngModel)]="specialists.area"></textarea>
                 </div>
 
                 <div class="mb-3">
                     <label for="descricao" class="form-label">Descrição</label><br>
-                    <textarea class="form-control" name="descricao" id="descricao" cols="30" rows="5" [(ngModel)]="Specialists.descricao"></textarea>
+                    <textarea class="form-control" name="descricao" id="descricao" cols="30" rows="5" [(ngModel)]="specialists.descricao"></textarea>
                 </div>
 
                 <div class="d-grid gap-2">
                     <button (click)="cadastrar()" type="button" class="btn btn-success">
-                        Salvar
+                        Cadastrar Especialista
                     </button>
                 </div>
             </form>
-
         </div>
     </div>
 </section>
