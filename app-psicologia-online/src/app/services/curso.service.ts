@@ -12,10 +12,18 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+
+// Para usar o HttpClient, HttpHeaders, temos que primeiro injetá-lo nas classes que utilizarei
+
+
 export class CursoService {
   private urlBase: string = 'http://localhost:3000/cursos/';
   
   constructor(private httpCliente: HttpClient) { }
+
+
+// O serviço HttpClient faz o uso de observables para todas as transações, para isso,
+//importei o RxJS, onde emitirá notificações quando acontece alguma mudança em um de seus itens
 
   public getAll(): Observable<Curso[]> {
     return this.httpCliente.get<Curso[]>(this.urlBase);
