@@ -25,10 +25,11 @@ export class SpecialistsEditComponent implements OnInit {
 
   public salvar() {
     this.specialistsServ.edit(this.specialists).subscribe((resposta) => {
-      console.log(resposta);
-      this.rota.navigate(['/Specialists-detalhes/' + this.specialists.id]);
+      this.rota.navigate(['/specialists-detalhes/' + this.specialists.id]);
     });
   }
+
+
 
   public deletar() {
     this.specialistsServ.delete(this.specialists.id).subscribe((resposta) => {

@@ -4,7 +4,7 @@
       "id": 1,
       "nome": "Ressonância Harmônica",
       "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "preco": 1500,
+      "preco": 1700,
       "foto": "assets/img/curso-ressonancia.jpg",
       "apresentacao": "Curso Excelente"
     },
@@ -19,20 +19,20 @@
   ],
   "specialists": [
     {
-      "id": 1,
-      "nome": "Fabíola Augusto",
-      "descricao": "Seja bem-vindo (a)! Sou Filósofa, Psicóloga Clínica, Especialista em Avaliação Psicológica e Atuo especialmente com foco em dinâmica familiar e resolução de conflitos. Meu objetivo é te auxiliar a compreender sentimentos, emoções a fim de construir autoconhecimento e ser feliz.",
-      "area": "Psicolocia Clínica",
-      "preco": 150,
-      "foto": "assets/img/doctors/doctors-4.jpg"
-    },
-    {
       "id": 2,
       "nome": "William Júnior",
       "descricao": "Olá, sou Hiago! Psicólogo, Mestre em Psicologia e Especialista em Terapia Cognitivo-Comportamental. Que tal embarcar no processo de autoconhecimento que a psicoterapia pode te oferecer? Vamos juntos acolher e transformar situações, pensamentos, emoções e comportamentos! Agende sua sessão comigo! :)",
       "area": "Comportamental",
       "preco": 150,
       "foto": "assets/img/doctors/doctors-1.jpg"
+    },
+    {
+      "id": 3,
+      "nome": "Fabíola Augusto",
+      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "area": "Clínica",
+      "preco": 1500,
+      "foto": "assets/img/doctors/doctors-2.jpg"
     }
   ]
 }
