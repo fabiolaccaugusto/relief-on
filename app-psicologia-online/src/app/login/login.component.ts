@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from '../services/auth.service';
-import { Usuario } from './usuario';
+import { Usuario } from '../models/usuario.model';
 
 @Component({
   selector: 'app-login',
@@ -10,17 +10,42 @@ import { Usuario } from './usuario';
 })
 export class LoginComponent implements OnInit {
 
-  usuario: Usuario = new Usuario();
+  public usuario: Usuario = {
+    id: 0,
+    nome: '',
+    email: '',
+    senha: '',
+    tipo: 0,
+    rua: '',
+    complemento: '',
+    cep: '',
+    numero: 0,
+    bairro: '',
+    cidade: '',
+    estado: ''
+  };
 
-  constructor(private authService: AuthService) { }
+  constructor(private auth: AuthService) { }
 
-  ngOnInit() {
-
+  ngOnInit(): void {
   }
 
-  fazerLogin(){
-    //console.log(this.usuario);
-    this.authService.fazerLogin(this.usuario);
+  public logar() {
+    console.log('Aqui logar!');
+
+    this.auth.realizarLogin(this.usuario);
+  }
+
+  public onSubmit(form: any) {
+
+    console.log(form);
+    console.log(form.value);
+    console.log(form.value.email);
+
+    this.usuario.email = form.value.email;
+    this.usuario.senha = form.value.senha;
+
+    this.auth.realizarLogin(this.usuario);
   }
 
 }

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AuthGuardService } from 'src/app/guards/auth-guard.service';
+
 import { HomeComponent }  from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -66,7 +68,8 @@ const routes: Routes = [
   },
   {
     path: 'curso-novo',
-    component: CursoNovoComponent
+    component: CursoNovoComponent,
+    canActivate: [ AuthGuardService ]
   },
   {
     path: 'curso-edit/:id',

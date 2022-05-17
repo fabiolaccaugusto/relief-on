@@ -1,38 +1,62 @@
 import { Router } from '@angular/router';
 import { Injectable, EventEmitter } from '@angular/core';
 
-import { Usuario } from '../login/usuario';
+import { Usuario } from '../models/usuario.model';
+import { UsuariosService } from './usuario.service';
 
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
-
   private usuarioAutenticado: boolean = false;
+  private admin: boolean = false;
 
-  mostrarMenuEmitter = new EventEmitter<boolean>();
+  public mostrarMenuEmitter = new EventEmitter<boolean>();
 
-  constructor(private router: Router) { }
 
-  fazerLogin(usuario: Usuario){
+  constructor(private rota: Router, private usuariosService: UsuariosService) { }
 
-    if (usuario.nome === 'usuario@email.com' && 
-      usuario.senha === '123456') {
+  public realizarLogin(usuario: Usuario) {
+    this.usuariosService.getByEmailPassword(usuario).subscribe((usuarioAuth: Usuario[])=>{
+      console.log('usuarioAuth', usuarioAuth);
 
-      this.usuarioAutenticado = true;
+      const [user] = usuarioAuth;
 
-      this.mostrarMenuEmitter.emit(true);
+      if (usuarioAuth) {
+        if (usuario.email === user.email && usuario.senha === user.senha) {
 
-      this.router.navigate(['/']);
+          this.usuarioAutenticado = true;
 
-    } else {
-      this.usuarioAutenticado = false;
+          if (user.tipo === 1) {
+            this.admin = true;
+          }
 
-      this.mostrarMenuEmitter.emit(false);
-    }
+          this.mostrarMenuEmitter.emit(true);
+
+          this.rota.navigate(['/home']);
+        } else {
+          this.usuarioAutenticado = false;
+          this.mostrarMenuEmitter.emit(false);
+        }
+
+      } else {
+          this.usuarioAutenticado = false;
+          this.mostrarMenuEmitter.emit(false);
+      }
+
+
+    }, (erro)=>{
+        console.error('Login erro: ', erro);
+    });
   }
 
-  usuarioEstaAutenticado(){
+  public isUsuarioAutenticado(): boolean {
     return this.usuarioAutenticado;
+  }
+
+  public isAdmin() {
+    return this.admin;
   }
 
 }

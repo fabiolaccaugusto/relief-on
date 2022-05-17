@@ -30,6 +30,7 @@ import { SpecialistsNovoComponent } from './specialists-novo/specialists-novo.co
 import { SpecialistsService } from './services/specialists.service';
 import { AuthService } from './services/auth.service';
 import { CursoService } from './services/curso.service';
+import { SigninComponent } from './signin/signin.component';
 
 
 
@@ -52,7 +53,8 @@ import { CursoService } from './services/curso.service';
     CursosComponent,
     SpecialistsDetalhesComponent,
     SpecialistsEditComponent,
-    SpecialistsNovoComponent
+    SpecialistsNovoComponent,
+    SigninComponent
        ],
 
   imports: [      // modulos que quero importar
