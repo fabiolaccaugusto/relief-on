@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-import { AuthService } from '../services/auth.service';
-import { Usuario } from '../models/usuario.model';
+import { Aluno } from 'src/app/models/aluno.model';
+import { AuthUsuarioService } from 'src/app/services/auth-usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -9,43 +8,18 @@ import { Usuario } from '../models/usuario.model';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  public aluno: Aluno = new Aluno();
 
-  public usuario: Usuario = {
-    id: 0,
-    nome: '',
-    email: '',
-    senha: '',
-    tipo: 0,
-    rua: '',
-    complemento: '',
-    cep: '',
-    numero: 0,
-    bairro: '',
-    cidade: '',
-    estado: ''
-  };
-
-  constructor(private auth: AuthService) { }
+  constructor(private authUsuario: AuthUsuarioService) { }
 
   ngOnInit(): void {
   }
 
-  public logar() {
-    console.log('Aqui logar!');
-
-    this.auth.realizarLogin(this.usuario);
+  public realizarLogin() {
+    if (this.aluno.email && this.aluno.senha) {
+      this.authUsuario.logar(this.aluno);
+    } else {
+      alert('Informe o usuário e/ou senha!');
+    }
   }
-
-  public onSubmit(form: any) {
-
-    console.log(form);
-    console.log(form.value);
-    console.log(form.value.email);
-
-    this.usuario.email = form.value.email;
-    this.usuario.senha = form.value.senha;
-
-    this.auth.realizarLogin(this.usuario);
-  }
-
 }

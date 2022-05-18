@@ -28,12 +28,7 @@ import { SpecialistsDetalhesComponent } from './specialists-detalhes/specialists
 import { SpecialistsEditComponent } from './specialists-edit/specialists-edit.component';
 import { SpecialistsNovoComponent } from './specialists-novo/specialists-novo.component';
 import { SpecialistsService } from './services/specialists.service';
-import { AuthService } from './services/auth.service';
 import { CursoService } from './services/curso.service';
-import { SigninComponent } from './signin/signin.component';
-
-
-
 
 @NgModule({
   declarations: [
@@ -53,8 +48,7 @@ import { SigninComponent } from './signin/signin.component';
     CursosComponent,
     SpecialistsDetalhesComponent,
     SpecialistsEditComponent,
-    SpecialistsNovoComponent,
-    SigninComponent
+    SpecialistsNovoComponent
        ],
 
   imports: [      // modulos que quero importar
@@ -73,7 +67,6 @@ import { SigninComponent } from './signin/signin.component';
   ],
   providers: [
     SpecialistsService,
-    AuthService,
     CursoService
 
   ],           // aqui nos colocamos os serviços que vão ficar disponíveis para todos os componentes declarados neste módulo aqui.

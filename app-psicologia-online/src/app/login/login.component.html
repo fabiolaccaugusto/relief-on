@@ -10,9 +10,27 @@
     <div class="container">
 
         <body class="text-center">
-            <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)" class="form-signin">
-                <!-- <img class="mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
-                <div>
+            <form class="form-signin">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input [(ngModel)]="aluno.email" name="email" type="email" class="form-control" id="email">
+                </div>
+                <div class="mb-3">
+                    <label for="senha" class="form-label">Senha</label>
+                    <input [(ngModel)]="aluno.senha" name="senha" type="password" class="form-control" id="senha">
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button (click)="realizarLogin()" type="button" class="btn btn-primary">
+                          Logar
+                      </button>
+                </div>
+
+
+
+
+
+                <!-- <div>
                     <input required email #email="ngModel" [(ngModel)]="usuario.email" name="email" type="mail" id="email" class="form-control" placeholder="Email" required autofocus>
                     <label for="email" class="sr-only"></label>
                 </div>
@@ -30,8 +48,8 @@
                 <br><button class="btn btn-lg btn-secndary btn-block" [disabled]="!formulario.valid" type="submit"><a [routerLink]="['/home']">Entrar</a></button>
                 <br><br>
                 <button type="button" class="btn btn-link"><a [routerLink]="['/home']">Esqueci minha senha</a></button>
-                <br>
-                <button type="button" class="btn btn-link"><a [routerLink]="['/signin']">Registrar</a></button>
+                <br> -->
+                <!-- <button type="button" class="btn btn-link"><a [routerLink]="['/signin']">Registrar</a></button> -->
 
 
             </form>
@@ -39,4 +57,3 @@
         </body>
     </div>
 </section>
-<!-- End Contact Section -->
