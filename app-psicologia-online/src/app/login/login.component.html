@@ -9,21 +9,28 @@
     </div>
     <div class="container">
 
-        <body class="text-center">
+        <body class="text">
             <form class="form-signin">
                 <div class="mb-3">
-                    <label for="email" class="form-label"></label>
+                    <label for="email" class="form-label">Email</label>
                     <input [(ngModel)]="aluno.email" name="email" type="email" class="form-control" id="email" placeholder="Email">
                 </div>
                 <div class="mb-3">
-                    <label for="senha" class="form-label"></label>
+                    <label for="senha" class="form-label">Senha</label>
                     <input [(ngModel)]="aluno.senha" name="senha" type="password" class="form-control" id="senha" placeholder="Senha">
                 </div>
                 <div class="d-grid gap-2">
-                    <button class="btn btn-lg btn-secndary btn-block" type="submit"><a [routerLink]="['/home']">Entrar</a></button>
-                    <!-- <button (click)="realizarLogin()" type="button" class="btn btn-primary">
-                          Entrar
-                      </button> -->
+                    <!-- <button class="btn btn-lg btn-secndary btn-block" type="submit"><a
+                            [routerLink]="['/home']">Entrar</a></button> -->
+                    <button (click)="realizarLogin()" type="button" class="btn btn-primary">
+                        Entrar
+                    </button>
+
+                </div>
+                <div class="mt-3 text-center">
+                    <span> 
+                        <a [routerLink]="[ '/register'] ">Não possui conta? Acesse aqui !</a>
+                    </span>
                 </div>
             </form>
         </body>

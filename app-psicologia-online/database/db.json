@@ -34,5 +34,22 @@
       "preco": 1500,
       "foto": "assets/img/doctors/doctors-2.jpg"
     }
+  ],
+  "alunos": [
+    {
+      "id": 1,
+      "nome": "Fah",
+      "email": "fabiola_augusto@yahoo.com.br",
+      "senha": "1234",
+      "cpf": "09302286690",
+      "favoritos": []
+    },
+    {
+      "id": 2,
+      "nome": "Fabíola Augusto",
+      "cpf": "093.022.866-90",
+      "email": "fabiola_augusto@yahoo.com.br",
+      "senha": "1234"
+    }
   ]
 }

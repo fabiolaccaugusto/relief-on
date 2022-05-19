@@ -18,10 +18,12 @@ export class AuthUsuarioService {
 
             if (usuarioLogin) {
               this.setAutenticado(true);
-              this.rota.navigate(['/home']);
+              this.rota.navigate(['/curso-novo']);
+            } else {
+                this.setAutenticado(false);
             }
 
-            this.setAutenticado(false);
+            
 
         }); 
     }
