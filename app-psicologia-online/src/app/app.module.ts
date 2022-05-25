@@ -4,7 +4,7 @@
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 // O HTTPClientModule é utilizado para comunicar a aplicação Web front-end com o servidor.
@@ -49,12 +49,13 @@ import { CursoService } from './services/curso.service';
     SpecialistsDetalhesComponent,
     SpecialistsEditComponent,
     SpecialistsNovoComponent
-       ],
+  ],
 
   imports: [      // modulos que quero importar
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
     HttpClientModule
 
     //SpecialistsModule   com o modulo importado, tudo que eu tiver dentro do exports, eu consigo utilizar dentro de qualquer outro componente que estiver declarado aqui.

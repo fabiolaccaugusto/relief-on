@@ -9,41 +9,59 @@
     </div>
     <div class="container">
 
-        <body class="">
-            <form class="form-signin">
+        <body class="text">
+            <form #form [formGroup]="alunoForm" (ngSubmit)="registrar()" class="form-signin">
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome</label>
-                    <input [(ngModel)]="aluno.nome" name="nome" type="text" class="form-control" id="nome" placeholder="">
-                </div>
+                    <input name="nome" formControlName="nome" type="text" class="form-control" id="nome">
 
+                    <div *ngIf="alunoForm.get('nome')?.errors?.['required'] || 
+                         alunoForm.get('nome')?.errors?.['minlength'] ||
+                         alunoForm.get('nome')?.errors?.['maxlength']" class="alert alert-danger" role="alert">
+                        Informe o nome do usuário, respeitando as quantidades mínima e máxima de caracteres que são iguais a 5 e 255, respectivamente!
+                    </div>
+                </div>
                 <div class="mb-3">
                     <label for="cpf" class="form-label">CPF</label>
-                    <input [(ngModel)]="aluno.cpf" name="cpf" type="text" class="form-control" id="cpf" placeholder="">
+                    <input name="cpf" formControlName="cpf" type="text" class="form-control" id="cpf">
+
+                    <div *ngIf="alunoForm.get('cpf')?.errors?.['required'] || 
+                    alunoForm.get('cpf')?.errors?.['minlength']" class="alert alert-danger" role="alert">
+                        Informe os 11 dígitos do seu CPF
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input [(ngModel)]="aluno.email" name="email" type="email" class="form-control" id="email" placeholder="">
+                    <input name="email" formControlName="email" type="email" class="form-control" id="email">
+
+                    <div *ngIf="alunoForm.get('email')?.errors?.['required'] || 
+                     alunoForm.get('email')?.errors?.['email']" class="alert alert-danger" role="alert">
+                        Informe o email correto
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="senha" class="form-label">Senha</label>
-                    <input [(ngModel)]="aluno.senha" name="senha" type="password" class="form-control" id="senha" placeholder="">
+                    <input name="senha" formControlName="senha" type="password" class="form-control" id="senha">
+
+                    <div *ngIf="alunoForm.get('senha')?.errors?.['required'] || 
+                     alunoForm.get('senha')?.errors?.['minlength']" class="alert alert-danger" role="alert">
+                        Informe uma senha com pelo menos 6 dígitos
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="senhaCheck" class="form-label">Confirmar Senha</label>
-                    <input [(ngModel)]="senha" name="senhaCheck" type="password" class="form-control" id="senhaCheck" placeholder="">
+                    <input name="senhaCheck" formControlName="senhaCheck" type="password" class="form-control" id="senhaCheck">
+
+                    <div *ngIf="alunoForm.get('senhaCheck')?.errors?.['required'] || 
+                    alunoForm.get('senhaCheck')?.errors?.['minlength']" class="alert alert-danger" role="alert">
+                        Confirme a senha
+                    </div>
                 </div>
                 <div class="d-grid gap-2">
-                    <!-- <button class="btn btn-lg btn-secndary btn-block" type="submit"><a
-                            [routerLink]="['/home']">Entrar</a></button> -->
-                    <button (click)="registrar()" type="button" class="btn btn-success">
-                                Registrar
-                            </button>
+                    <button type="submit" class="btn btn-success">
+                        Registrar
+                    </button>
                 </div>
-                <!-- <div class="mt-3 ">
-                    <span>
-                        <a [routerLink]="[ '/register'] ">Não possui conta? Acesse aqui !</a>
-                    </span>
-                </div> -->
             </form>
         </body>
     </div>
