@@ -26,7 +26,11 @@ export class RegisterComponent implements OnInit {
         Validators.maxLength(255)
       ])
      ],
-      cpf: ['', Validators.required],
+      cpf: ['', Validators.compose([
+        Validators.required,
+        Validators.minLength(11),
+      ])
+     ],
       email: ['', Validators.compose([
         Validators.required, Validators.email
       ])],
@@ -35,15 +39,26 @@ export class RegisterComponent implements OnInit {
       ])],
       senhaCheck: ['', Validators.compose([
         Validators.required, Validators.minLength(6)
-      ])]
+      ])],
+      genero: ['', Validators.required],
+      favoritos: this.formBuilder.array([], Validators.required)
+  
     });
   }
 
   public registrar() {
+    console.log(this.alunoForm);
+
+    if (this.alunoForm.valid && !this.alunoForm.pending) {
+
+    } else {
+      console.log('Formulário inválido')
+    }
+
+
     // this.alunoServ.add(this.aluno).subscribe((resposta: any)=>{
     //   console.log(resposta);
     //   this.rota.navigate(['/login']);
     // });
-    console.log(this.alunoForm);
   }
 }

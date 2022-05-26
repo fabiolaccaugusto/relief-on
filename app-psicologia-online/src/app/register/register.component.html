@@ -10,55 +10,68 @@
     <div class="container">
 
         <body class="text">
-            <form #form [formGroup]="alunoForm" (ngSubmit)="registrar()" class="form-signin">
+            <form #form="ngForm" [formGroup]="alunoForm" (ngSubmit)="registrar()" class="form-signin">
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome</label>
                     <input name="nome" formControlName="nome" type="text" class="form-control" id="nome">
 
-                    <div *ngIf="alunoForm.get('nome')?.errors?.['required'] || 
-                         alunoForm.get('nome')?.errors?.['minlength'] ||
-                         alunoForm.get('nome')?.errors?.['maxlength']" class="alert alert-danger" role="alert">
+                    <div *ngIf="(alunoForm.get('nome')?.errors?.['required'] || 
+                    alunoForm.get('nome')?.errors?.['minlength'] ||
+                    alunoForm.get('nome')?.errors?.['maxlength']) 
+                    && (form.submitted || alunoForm.get('nome')?.touched)" class="alert alert-danger" role=" alert ">
                         Informe o nome do usuário, respeitando as quantidades mínima e máxima de caracteres que são iguais a 5 e 255, respectivamente!
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="cpf" class="form-label">CPF</label>
-                    <input name="cpf" formControlName="cpf" type="text" class="form-control" id="cpf">
+                    <label for="cpf " class="form-label ">CPF</label>
+                    <input name="cpf " formControlName="cpf " type="text " class="form-control " id="cpf ">
 
-                    <div *ngIf="alunoForm.get('cpf')?.errors?.['required'] || 
-                    alunoForm.get('cpf')?.errors?.['minlength']" class="alert alert-danger" role="alert">
+                    <div class="alert alert-danger" role=" alert " *ngIf="(alunoForm.get('cpf')?.errors?.['required'] || 
+                    alunoForm.get( 'cpf')?.errors?.[ 'minlength']) (form.submitted || alunoForm.get('cpf')?.touched)">
                         Informe os 11 dígitos do seu CPF
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input name="email" formControlName="email" type="email" class="form-control" id="email">
+                    <label for="email " class="form-label ">Email</label>
+                    <input name="email " formControlName="email " type="email " class="form-control " id="email ">
 
-                    <div *ngIf="alunoForm.get('email')?.errors?.['required'] || 
-                     alunoForm.get('email')?.errors?.['email']" class="alert alert-danger" role="alert">
+                    <div class="alert alert-danger " role="alert " *ngIf="(alunoForm.get( 'email')?.errors?.[ 'required'] || alunoForm.get( 'email')?.errors?.[ 'email']) && (form.submitted || alunoForm.get('email')?.touched)">
                         Informe o email correto
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="senha" class="form-label">Senha</label>
-                    <input name="senha" formControlName="senha" type="password" class="form-control" id="senha">
+                    <label for="senha " class="form-label ">Senha</label>
+                    <input name="senha " formControlName="senha " type="password" class="form-control " id="senha ">
 
-                    <div *ngIf="alunoForm.get('senha')?.errors?.['required'] || 
-                     alunoForm.get('senha')?.errors?.['minlength']" class="alert alert-danger" role="alert">
-                        Informe uma senha com pelo menos 6 dígitos
+                    <div class="alert alert-danger " role="alert " *ngIf="(alunoForm.get( 'senha')?.errors?.[ 'required'] || alunoForm.get( 'senha')?.errors?.[ 'senha']) && (form.submitted || alunoForm.get('senha')?.touched)">
+                        Informe uma senha com 6 dígitos
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="senhaCheck" class="form-label">Confirmar Senha</label>
-                    <input name="senhaCheck" formControlName="senhaCheck" type="password" class="form-control" id="senhaCheck">
+                    <label for="senhaCheck " class="form-label ">Confirmar Senha</label>
+                    <input name="senhaCheck " formControlName="senhaCheck " type="password" class="form-control " id="senhaCheck ">
 
-                    <div *ngIf="alunoForm.get('senhaCheck')?.errors?.['required'] || 
-                    alunoForm.get('senhaCheck')?.errors?.['minlength']" class="alert alert-danger" role="alert">
+                    <div class="alert alert-danger " role="alert " *ngIf="(alunoForm.get( 'senhaChek')?.errors?.[ 'required'] || alunoForm.get( 'senhaCheck')?.errors?.[ 'senhaCheck']) && (form.submitted || alunoForm.get('senhaCheck')?.touched)">
                         Confirme a senha
                     </div>
                 </div>
+                <div class="mb-3">
+                    <h6>Gênero</h6>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="genero" formControlName="genero" id="feminino" value="f">
+                        <label class="form-chack-label" for="feminino">
+                            Feminino
+                        </label></div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="genero" formControlName="genero" id="masculino" value="m">
+                        <label class="form-chack-label" for="masculino">
+                            Masculino
+                        </label>
+                        <!-- display inline-block -->
+                    </div>
+                </div>
                 <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-success">
+                    <button (click)="registrar()" type="button" class="btn btn-primary">
                         Registrar
                     </button>
                 </div>
