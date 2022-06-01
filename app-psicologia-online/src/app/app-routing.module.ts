@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuardService } from 'src/app/guards/auth-guard.service';
 
+
 import { HomeComponent }  from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -10,9 +11,8 @@ import { ContactComponent } from './contact/contact.component';
 import { SpecialistsComponent } from './specialists/specialists.component';
 import { DepartamentsComponent } from './departaments/departaments.component';
 import { AppointmentComponent } from './appointment/appointment.component';
-import { CursosComponent } from 'src/app/cursos/cursos.component';
 import { CursoDetalhesComponent } from 'src/app/curso-detalhes/curso-detalhes.component';
-import { CursoNovoComponent } from 'src/app/curso-novo/curso-novo.component';
+//import { CursoNovoComponent } from 'src/app/cursos/curso-novo/curso-novo.component';
 import { CursoEditComponent } from 'src/app/curso-edit/curso-edit.component';
 import { SpecialistsDetalhesComponent } from './specialists-detalhes/specialists-detalhes.component';
 import { SpecialistsEditComponent } from './specialists-edit/specialists-edit.component';
@@ -60,17 +60,18 @@ const routes: Routes = [
   },
   {
     path: 'cursos',
-    component: CursosComponent
+    loadChildren: ()=> import('src/app/cursos/cursos.module')
+                        .then(m => m.CursosModule)
   },
   {
     path: 'curso-detalhes/:id',
     component: CursoDetalhesComponent
   },
-  {
-    path: 'curso-novo',
-    component: CursoNovoComponent,
-    canActivate: [ AuthGuardService ]
-  },
+  //{
+  // path: 'curso-novo',
+  // component: CursoNovoComponent,
+  // canActivate: [ AuthGuardService ]
+  //},
   {
     path: 'curso-edit/:id',
     component: CursoEditComponent

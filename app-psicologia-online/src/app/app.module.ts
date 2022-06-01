@@ -9,6 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 // O HTTPClientModule é utilizado para comunicar a aplicação Web front-end com o servidor.
 
+import { CursosModule} from 'src/app/cursos/cursos.module';
+
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -21,9 +24,9 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CursoDetalhesComponent } from './curso-detalhes/curso-detalhes.component';
-import { CursoNovoComponent } from './curso-novo/curso-novo.component';
+//import { CursoNovoComponent } from './cursos/curso-novo/curso-novo.component';
 import { CursoEditComponent } from './curso-edit/curso-edit.component';
-import { CursosComponent } from './cursos/cursos.component';
+//import { CursosComponent } from './cursos/cursos.component';
 import { SpecialistsDetalhesComponent } from './specialists-detalhes/specialists-detalhes.component';
 import { SpecialistsEditComponent } from './specialists-edit/specialists-edit.component';
 import { SpecialistsNovoComponent } from './specialists-novo/specialists-novo.component';
@@ -43,9 +46,9 @@ import { CursoService } from './services/curso.service';
     HeaderComponent,
     FooterComponent,
     CursoDetalhesComponent,
-    CursoNovoComponent,
+    //CursoNovoComponent,
     CursoEditComponent,
-    CursosComponent,
+    //CursosComponent,
     SpecialistsDetalhesComponent,
     SpecialistsEditComponent,
     SpecialistsNovoComponent
@@ -56,7 +59,8 @@ import { CursoService } from './services/curso.service';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CursosModule
 
     //SpecialistsModule   com o modulo importado, tudo que eu tiver dentro do exports, eu consigo utilizar dentro de qualquer outro componente que estiver declarado aqui.
 
