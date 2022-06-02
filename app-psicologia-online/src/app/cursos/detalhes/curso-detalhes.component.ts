@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { CursoService } from 'src/app/services/curso.service';
-import { Curso } from '../models/curso.model';
+import { Curso } from '../../models/curso.model';
 
 @Component({
   selector: 'app-curso-detalhes',

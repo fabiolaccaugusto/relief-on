@@ -23,15 +23,16 @@ import { RegisterComponent } from './register/register.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { CursoDetalhesComponent } from './curso-detalhes/curso-detalhes.component';
+// import { CursoDetalhesComponent } from './cursos/detalhes/curso-detalhes.component';
 //import { CursoNovoComponent } from './cursos/curso-novo/curso-novo.component';
-import { CursoEditComponent } from './curso-edit/curso-edit.component';
+// import { CursoEditComponent } from './cursos/edit/curso-edit.component';
 //import { CursosComponent } from './cursos/cursos.component';
 import { SpecialistsDetalhesComponent } from './specialists-detalhes/specialists-detalhes.component';
 import { SpecialistsEditComponent } from './specialists-edit/specialists-edit.component';
 import { SpecialistsNovoComponent } from './specialists-novo/specialists-novo.component';
 import { SpecialistsService } from './services/specialists.service';
 import { CursoService } from './services/curso.service';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -45,13 +46,14 @@ import { CursoService } from './services/curso.service';
     AppointmentComponent,
     HeaderComponent,
     FooterComponent,
-    CursoDetalhesComponent,
+    // CursoDetalhesComponent,
     //CursoNovoComponent,
-    CursoEditComponent,
+    // CursoEditComponent,
     //CursosComponent,
     SpecialistsDetalhesComponent,
     SpecialistsEditComponent,
-    SpecialistsNovoComponent
+    SpecialistsNovoComponent,
+    AdminComponent
   ],
 
   imports: [      // modulos que quero importar
@@ -79,7 +81,6 @@ import { CursoService } from './services/curso.service';
 
 })
 export class AppModule { }    // declaração da classe
-
 
 
 

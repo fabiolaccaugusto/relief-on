@@ -2,7 +2,10 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
 import { CursosComponent } from "./cursos.component";
-import { CursoNovoComponent } from './curso-novo/curso-novo.component';
+import { CursoNovoComponent } from './novo/curso-novo.component';
+import { CursosModule } from './cursos.module';
+import { CursoEditComponent } from 'src/app/cursos/edit/curso-edit.component';
+import { CursoDetalhesComponent } from 'src/app/cursos/detalhes/curso-detalhes.component';
 
 const routes: Routes = [
     {
@@ -11,13 +14,21 @@ const routes: Routes = [
     },
     {
         path: 'novo',
-        component:  CursoNovoComponent
+        component: CursoNovoComponent
+    },
+    {
+        path: ':id/edit',
+        component: CursoEditComponent
+    },
+    {
+        path: ':id/detalhes',
+        component: CursoDetalhesComponent
     }
 ];
 
-@NgModule ({
-    imports: [ RouterModule.forChild(routes)],
-    exports: [ RouterModule]
+@NgModule({
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
 
 

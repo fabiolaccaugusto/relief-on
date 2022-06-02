@@ -5,12 +5,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CursosRoutingModule } from './cursos-routing.module';
 
 import { CursosComponent } from './cursos.component';
-import { CursoNovoComponent } from './curso-novo/curso-novo.component';
+import { CursoNovoComponent } from './novo/curso-novo.component';
+import { CursoEditComponent } from 'src/app/cursos/edit/curso-edit.component';
+import { CursoDetalhesComponent } from './detalhes/curso-detalhes.component';
 
 @NgModule({
     declarations: [
         CursosComponent,
-        CursoNovoComponent
+        CursoNovoComponent,
+        CursoEditComponent,
+        CursoDetalhesComponent
     ],
     imports: [
         CommonModule,
