@@ -53,7 +53,7 @@ import { AdminComponent } from './admin/admin.component';
     SpecialistsDetalhesComponent,
     SpecialistsEditComponent,
     SpecialistsNovoComponent,
-    AdminComponent
+    // AdminComponent
   ],
 
   imports: [      // modulos que quero importar

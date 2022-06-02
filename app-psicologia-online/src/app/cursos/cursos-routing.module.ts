@@ -1,9 +1,8 @@
 import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
+import { Routes, RouterModule } from '@angular/router';
 
 import { CursosComponent } from "./cursos.component";
 import { CursoNovoComponent } from './novo/curso-novo.component';
-import { CursosModule } from './cursos.module';
 import { CursoEditComponent } from 'src/app/cursos/edit/curso-edit.component';
 import { CursoDetalhesComponent } from 'src/app/cursos/detalhes/curso-detalhes.component';
 
@@ -30,8 +29,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]
 })
-
-
-export class CursosRoutingModule {
-
-}
+export class CursosRoutingModule {}

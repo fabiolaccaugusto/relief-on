@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CursoService } from 'src/app/services/curso.service';
+import { Curso } from 'src/app/models/curso.model';
 
 @Component({
   selector: 'app-admin',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
-  constructor() { }
+  public cursos: Curso[] = [];
+  constructor(private cursoServ: CursoService) { }
 
   ngOnInit(): void {
+    this.cursoServ.getAll().subscribe((cursos: any[]) =>{
+      this.cursos = cursos;
+      console.log(this.cursos);
+      console.log("passou aqui");
+    });
   }
 
 }
