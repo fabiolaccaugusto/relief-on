@@ -47,12 +47,12 @@ import { AdminComponent } from './admin/admin.component';
     HeaderComponent,
     FooterComponent,
     // CursoDetalhesComponent,
-    //CursoNovoComponent,
+    // CursoNovoComponent,
     // CursoEditComponent,
     //CursosComponent,
     SpecialistsDetalhesComponent,
     SpecialistsEditComponent,
-    SpecialistsNovoComponent,
+    SpecialistsNovoComponent
     // AdminComponent
   ],
 
@@ -69,7 +69,6 @@ import { AdminComponent } from './admin/admin.component';
   ],
   exports: [
     //SpecialistsModule,
-
     // dizer para o angular quais sao as declarações desse modulo aqui (componentes, diretivas ou pipes)
   ],
   providers: [
@@ -81,9 +80,5 @@ import { AdminComponent } from './admin/admin.component';
 
 })
 export class AppModule { }    // declaração da classe
-
-
-
-// para gerar um novo modulo: ng g m nomeModulo
 
 // https://www.youtube.com/watch?v=36kd3uR-hG8

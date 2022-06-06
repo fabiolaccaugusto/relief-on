@@ -15,14 +15,14 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let item of cursos">
-                        <td>{{item.id}}</td>
+                        <td> {{item.id}} </td>
                         <td>
                             <!-- <a [routerLink]="['/cursos', item.id, 'detalhes']">
                                 {{item.nome}}
                             </a> -->
                         </td>
-                        <td> {{item.descricao}} </td>
-                        <td> {{item.preco}} </td>
+                        <td>{{item.descricao}}</td>
+                        <td>{{item.preco}}</td>
                         <td>
                             <!-- <button [routerLink]="['/cursos', item.id, 'edit']" class="btn btn-warning m-1">
                                 Editar
