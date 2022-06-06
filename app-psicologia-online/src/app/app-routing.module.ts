@@ -1,9 +1,7 @@
-// import { CursoDetalhesComponent } from 'src/app/curso-detalhes/curso-detalhes.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuardService } from 'src/app/guards/auth-guard.service';
-
 
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -18,9 +16,9 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { SpecialistsDetalhesComponent } from './specialists-detalhes/specialists-detalhes.component';
 import { SpecialistsEditComponent } from './specialists-edit/specialists-edit.component';
 import { SpecialistsNovoComponent } from './specialists-novo/specialists-novo.component';
-import { CursoNovoComponent } from './cursos/novo/curso-novo.component';
-import { CursoEditComponent } from './cursos/edit/curso-edit.component';
-import { CursoDetalhesComponent } from './cursos/detalhes/curso-detalhes.component';
+// import { CursoNovoComponent } from './cursos/novo/curso-novo.component';
+// import { CursoEditComponent } from './cursos/edit/curso-edit.component';
+// import { CursoDetalhesComponent } from './cursos/detalhes/curso-detalhes.component';
 import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
@@ -41,7 +39,8 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    component: AdminComponent
+    loadChildren: ()=> import('src/app/admin/admin.module')
+                      .then(m => m.AdminModule)
   },
   {
     path: 'register',
@@ -68,8 +67,8 @@ const routes: Routes = [
   },
   {
     path: 'cursos',
-    loadChildren: () => import('src/app/cursos/cursos.module')
-      .then(m => m.CursosModule)
+    loadChildren: ()=> import('src/app/cursos/cursos.module')
+                      .then(m => m.CursosModule)
   },
   // {
   //   path: 'curso-detalhes/:id',
@@ -95,19 +94,19 @@ const routes: Routes = [
   {
     path: 'specialists-edit/:id',
     component: SpecialistsEditComponent
-  },
-  {
-    path: ':id/edit',
-    component: CursoEditComponent
-  },
-  {
-    path: ':id/detalhes',
-    component: CursoDetalhesComponent
-  },
-  {
-    path: ':id/novo',
-    component: CursoNovoComponent
   }
+  // {
+  //   path: ':id/edit',
+  //   component: CursoEditComponent
+  // },
+  // {
+  //   path: ':id/detalhes',
+  //   component: CursoDetalhesComponent
+  // },
+  // {
+  //   path: ':id/novo',
+  //   component: CursoNovoComponent
+  // }
 
 ];
 

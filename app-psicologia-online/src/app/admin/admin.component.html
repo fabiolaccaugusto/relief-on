@@ -1,39 +1,37 @@
-<!-- vai trab como componente e depois transformar em um modulo -->
-<section class="container"> </section>
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">Código</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Descrição</th>
-                        <th scope="col">Valor</th>
-                        <th scope="col">Opções</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of cursos">
-                        <td> {{item.id}} </td>
-                        <td>
-                            <!-- <a [routerLink]="['/cursos', item.id, 'detalhes']">
-                                {{item.nome}}
-                            </a> -->
-                        </td>
-                        <td>{{item.descricao}}</td>
-                        <td>{{item.preco}}</td>
-                        <td>
-                            <!-- <button [routerLink]="['/cursos', item.id, 'edit']" class="btn btn-warning m-1">
-                                Editar
-                            </button> -->
-                            <!-- <button [routerLink]="['/cursos', item.id, 'detalhes']" class="btn btn-danger m-1">
-                                Deletar
-                            </button> -->
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<div class="row">
+    <div class="col">
+
+        <table class="table table-striped">
+            <thead>
+                <th>#Código</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Opções</th>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let item of cursos">
+                    <td> {{item.id}} </td>
+                    <td>
+                        <a [routerLink]="['/cursos', item.id, 'detalhes']">
+                            {{item.nome}}
+                        </a>
+                    </td>
+                    <td>{{item.descricao}}</td>
+                    <td>{{item.preco}}</td>
+                    <td>
+                        <button [routerLink]="['/cursos', item.id, 'edit']" class="btn btn-warning m-1">
+                            Editar
+                        </button>
+                        <button [routerLink]="['/cursos', item.id, 'detalhes']" class="btn btn-danger m-1">
+                            Deletar
+                        </button>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+
     </div>
 </div>

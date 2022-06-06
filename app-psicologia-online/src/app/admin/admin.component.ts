@@ -12,10 +12,8 @@ export class AdminComponent implements OnInit {
   constructor(private cursoServ: CursoService) { }
 
   ngOnInit(): void {
-    this.cursoServ.getAll().subscribe((cursos: any[]) =>{
+    this.cursoServ.getAll().subscribe((cursos: any[])=>{
       this.cursos = cursos;
-      console.log(this.cursos);
-      console.log("passou aqui");
     });
   }
 
