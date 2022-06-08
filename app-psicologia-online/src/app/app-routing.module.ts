@@ -70,6 +70,12 @@ const routes: Routes = [
     loadChildren: ()=> import('src/app/cursos/cursos.module')
                       .then(m => m.CursosModule)
   },
+  {
+    path: 'admin',
+    loadChildren: ()=> import('src/app/admin/admin.module')
+                      .then(m => m.AdminModule)
+  },
+
   // {
   //   path: 'curso-detalhes/:id',
   //   component: CursoDetalhesComponent

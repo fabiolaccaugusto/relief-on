@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Curso } from '../models/curso.model';
+import { environment } from 'src/environments/environment';
+
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -17,7 +19,11 @@ const httpOptions = {
 
 
 export class CursoService {
-  private urlBase: string = 'http://localhost:3000/cursos/';
+  private urlBase: string = environment.api+'cursos/';
+
+ // private urlBase: string = 'http://localhost:3000/cursos/';
+
+  public cursosUpdate = new EventEmitter<boolean>();
   
   constructor(private httpCliente: HttpClient) { }
 

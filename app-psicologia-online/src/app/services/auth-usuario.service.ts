@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { AlunoService } from 'src/app/services/aluno.service';
@@ -9,6 +9,7 @@ import { Aluno } from 'src/app/models/aluno.model';
 })
 export class AuthUsuarioService {
     private autenticado: boolean = false;
+    public usuarioLogado = new EventEmitter<boolean>();
 
     constructor(private rota: Router, private alunoServ: AlunoService) { }
 
@@ -16,15 +17,15 @@ export class AuthUsuarioService {
         this.alunoServ.checarLogin(usuario).subscribe((resposta:Aluno[])=>{
             const [ usuarioLogin ] = resposta;
 
+            console.log(usuarioLogin);
+
             if (usuarioLogin) {
               this.setAutenticado(true);
-              this.rota.navigate(['/curso-novo']);
+              this.usuarioLogado.emit(true);
+              this.rota.navigate(['/cursos/novo']);
             } else {
                 this.setAutenticado(false);
             }
-
-            
-
         }); 
     }
 

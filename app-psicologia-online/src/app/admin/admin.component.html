@@ -1,37 +1,49 @@
-<div class="row">
+<section class="container"> </section>
+<section class="container">
+  <div class="text-xl-end">
+    <button [routerLink]="['/cursos/novo']" class="btn btn-success">
+      Cadastrar novo curso
+    </button>
+  </div>
+  <br>
+  <br>
+  <div class="row">
     <div class="col">
-
-        <table class="table table-striped">
-            <thead>
-                <th>#Código</th>
-                <th>Nome</th>
-                <th>Descrição</th>
-                <th>Valor</th>
-                <th>Opções</th>
-            </thead>
-            <tbody>
-
-                <tr *ngFor="let item of cursos">
-                    <td> {{item.id}} </td>
-                    <td>
-                        <a [routerLink]="['/cursos', item.id, 'detalhes']">
-                            {{item.nome}}
-                        </a>
-                    </td>
-                    <td>{{item.descricao}}</td>
-                    <td>{{item.preco}}</td>
-                    <td>
-                        <button [routerLink]="['/cursos', item.id, 'edit']" class="btn btn-warning m-1">
-                            Editar
-                        </button>
-                        <button [routerLink]="['/cursos', item.id, 'detalhes']" class="btn btn-danger m-1">
-                            Deletar
-                        </button>
-                    </td>
-                </tr>
-                
-            </tbody>
-        </table>
+      <table class="table table-striped">
+        <thead>
+          <th>#Código</th>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Valor</th>
+          <th>Opções</th>
+        </thead>
+        <br>
+        <tbody>
+          <tr *ngFor="let item of cursos">
+            <td> {{item.id}} </td>
+            <td>
+              <a [routerLink]="['/cursos', item.id, 'detalhes']">
+                {{item.nome}}
+              </a>
+            </td>
+            <td>{{item.descricao}}</td>
+            <td>{{item.preco}}</td>
+            <td>
+              <button [routerLink]="['/cursos', item.id, 'edit']" class="btn btn-warning m-1">
+                Editar
+              </button>
+              <button (click)="deletar(item.id)" class="btn btn-danger m-1">
+                Deletar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
     </div>
-</div>
+  </div>
+
+
+
+
+</section>
