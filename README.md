@@ -1,6 +1,13 @@
 # relief-on
 
-APP DE AGENDAMENTO DE SERVIÇOS DE PSICOLOGIA ONLINE
+WINDOWS:
 
-Criado como atividade de avaliação da matéria de Desenvolvimento Web Front-end
+abrir o terminal do node
+na pasta:
+C:\Users\fabio\Documents\relief-on\app-psicologia-online>
+ng serve -o
+
+ABRIR O DATA BASE:
+npx json-server --watch db.json
+
 
