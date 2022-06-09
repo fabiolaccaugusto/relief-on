@@ -6,12 +6,14 @@ import { CursosComponent } from './cursos.component';
 import { CursoNovoComponent } from './novo/curso-novo.component';
 import { CursoEditComponent } from './edit/curso-edit.component';
 import { CursoDetalhesComponent } from './detalhes/curso-detalhes.component';
+import { CatalogoComponent } from './catalogo/catalogo.component';
 @NgModule({
     declarations: [
      CursosComponent,
      CursoNovoComponent,
      CursoEditComponent,
-     CursoDetalhesComponent
+     CursoDetalhesComponent,
+     CatalogoComponent
     ],
     imports: [
         CommonModule,

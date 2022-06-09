@@ -26,14 +26,14 @@ export class CursoEditComponent implements OnInit {
   public salvar() {
     this.cursoServ.edit(this.curso).subscribe((resposta) => {
       console.log(resposta);
-      this.rota.navigate(['/curso-detalhes/' + this.curso.id]);
+      this.rota.navigate(['/admin']);
     });
   }
 
   public deletar() {
     this.cursoServ.delete(this.curso.id).subscribe((resposta) => {
       console.log(resposta);
-      this.rota.navigate(['/home']);
+      this.rota.navigate(['/admin']);
     });
   }
 }

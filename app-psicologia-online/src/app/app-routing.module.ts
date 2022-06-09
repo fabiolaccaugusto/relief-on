@@ -121,3 +121,7 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
+//ctrl + k + c  => para Comentar
+//ctrl + k + c  => para Descomentar

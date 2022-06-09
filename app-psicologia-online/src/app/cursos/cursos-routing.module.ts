@@ -5,24 +5,35 @@ import { CursosComponent } from "./cursos.component";
 import { CursoNovoComponent } from './novo/curso-novo.component';
 import { CursoEditComponent } from 'src/app/cursos/edit/curso-edit.component';
 import { CursoDetalhesComponent } from 'src/app/cursos/detalhes/curso-detalhes.component';
+import { CatalogoComponent } from "./catalogo/catalogo.component";
+import { CursosGuardService } from "../guards/cursos.guard.service";
 
 const routes: Routes = [
     {
         path: '',
-        component: CursosComponent
+        component: CursosComponent,
+        children: [    
+            {
+                path: 'novo',
+                component: CursoNovoComponent
+
+            },
+            {
+                path: 'catalogo',
+                component: CatalogoComponent
+            },
+            {
+                path: ':id/edit',
+                component: CursoEditComponent
+               
+            },
+            {
+                path: ':id/detalhes',
+                component: CursoDetalhesComponent,
+                canActivateChild: [CursosGuardService]
+            }]
     },
-    {
-        path: 'novo',
-        component: CursoNovoComponent
-    },
-    {
-        path: ':id/edit',
-        component: CursoEditComponent
-    },
-    {
-        path: ':id/detalhes',
-        component: CursoDetalhesComponent
-    }
+
 ];
 
 @NgModule({
