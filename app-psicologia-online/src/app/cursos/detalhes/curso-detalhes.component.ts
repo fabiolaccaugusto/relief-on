@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 import { CursoService } from 'src/app/services/curso.service';
 import { Curso } from '../../models/curso.model';
@@ -11,17 +12,27 @@ import { Curso } from '../../models/curso.model';
 })
 export class CursoDetalhesComponent implements OnInit {
   public curso: Curso = new Curso();
-
+  public inscricao!: Subscription;
+  
   constructor(private rotaAtiva: ActivatedRoute,
               private cursoServ: CursoService) { }
 
-              ngOnInit(): void {
-                const codigo = Number(this.rotaAtiva.snapshot.paramMap.get('id'));
-                console.log(codigo);
-                this.cursoServ.get(codigo)
-                .subscribe((curso: Curso)=>{
-                  this.curso = curso;
-                  console.log(curso);
-                });
+  ngOnInit(): void {
+
+    this.inscricao = this.rotaAtiva.params.subscribe((parametro)=>{
+      const codigo = Number(parametro['id']);
+      console.log(codigo);
+
+      this.cursoServ.get(codigo).subscribe((curso: Curso)=>{
+        this.curso = curso;
+        console.log(curso);
+      });
+    });
+   
   }
+
+  ngOnDestroy() {
+    this.inscricao.unsubscribe();
+  }
+
 }

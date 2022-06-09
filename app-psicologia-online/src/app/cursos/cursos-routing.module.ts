@@ -16,7 +16,6 @@ const routes: Routes = [
             {
                 path: 'novo',
                 component: CursoNovoComponent
-
             },
             {
                 path: 'catalogo',
@@ -25,7 +24,6 @@ const routes: Routes = [
             {
                 path: ':id/edit',
                 component: CursoEditComponent
-               
             },
             {
                 path: ':id/detalhes',

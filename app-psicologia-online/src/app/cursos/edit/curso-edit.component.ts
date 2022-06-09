@@ -16,24 +16,27 @@ export class CursoEditComponent implements OnInit {
     private rota: Router,
     private rotaAtiva: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    const codigo: number = Number(this.rotaAtiva.snapshot.paramMap.get('id'));
-    this.cursoServ.get(codigo).subscribe((curso: Curso) => {
-      this.curso = curso;
-    })
-  }
+ngOnInit(): void {
+const codigo:number = Number(this.rotaAtiva.snapshot.paramMap.get('id'));
+this.cursoServ.get(codigo).subscribe((curso: Curso)=>{
+this.curso = curso;
+})
+}
 
-  public salvar() {
-    this.cursoServ.edit(this.curso).subscribe((resposta) => {
-      console.log(resposta);
-      this.rota.navigate(['/admin']);
-    });
-  }
+public salvar() {
+this.cursoServ.edit(this.curso).subscribe((resposta)=>{
+console.log(resposta);
+this.rota.navigate(['/admin']);
+});
 
-  public deletar() {
-    this.cursoServ.delete(this.curso.id).subscribe((resposta) => {
-      console.log(resposta);
-      this.rota.navigate(['/admin']);
-    });
-  }
+}
+
+public deletar() {
+this.cursoServ.delete(this.curso.id).subscribe((resposta)=>{
+console.log(resposta);
+
+this.rota.navigate(['/admin']);
+});
+
+}
 }

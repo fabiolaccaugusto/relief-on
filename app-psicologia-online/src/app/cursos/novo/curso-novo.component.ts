@@ -18,9 +18,14 @@ export class CursoNovoComponent implements OnInit {
   }
 
   public cadastrar() {
+
     this.cursoServ.add(this.curso).subscribe((resposta)=>{
       console.log(resposta);
+
       this.rota.navigate(['/admin']);
     });
+
+   
   }
+
 }

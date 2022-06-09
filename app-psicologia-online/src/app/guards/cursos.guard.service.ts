@@ -10,6 +10,6 @@ export class CursosGuardService implements CanActivateChild {
     constructor() { }
     
     public canActivateChild(): Observable<boolean> | boolean {
-        return false;
+        return true;
     }
 }
