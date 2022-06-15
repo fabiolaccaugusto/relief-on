@@ -22,7 +22,7 @@ export class AuthUsuarioService {
             if (usuarioLogin) {
               this.setAutenticado(true);
               this.usuarioLogado.emit(true);
-              this.rota.navigate(['/cursos/novo']);
+              this.rota.navigate(['/admin']);
             } else {
                 this.setAutenticado(false);
             }

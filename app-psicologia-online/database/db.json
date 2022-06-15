@@ -15,14 +15,6 @@
       "apresentacao": "Lorem ipsum dolor sit amet",
       "preco": 1800,
       "foto": "assets/img/images.jpeg"
-    },
-    {
-      "id": 3,
-      "nome": "dad",
-      "descricao": "111",
-      "apresentacao": "da",
-      "preco": 111,
-      "foto": ""
     }
   ],
   "specialists": [
