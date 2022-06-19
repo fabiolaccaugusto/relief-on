@@ -15,7 +15,7 @@ export class CursosGuardService implements CanActivate {
 
 public canActivate(route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | boolean {
-      if (this.authUsuario.getAutenticado()) {
+      if (this.authUsuario.isAutenticado()) {
       return true;
 }
 

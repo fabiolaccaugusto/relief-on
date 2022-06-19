@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuardService } from "../guards/auth-guard.service";
+import { CursosGuardService } from "../guards/cursos.guard.service";
 
 import { CursosComponent } from "./cursos.component";
 import { CursoNovoComponent } from './novo/curso-novo.component';
@@ -12,22 +12,24 @@ import { CursoDetalhesComponent } from 'src/app/cursos/detalhes/curso-detalhes.c
 const routes: Routes = [
   {
     path: '',
-    component: CursosComponent
-  },
-  {
-    path: 'novo',
-    component: CursoNovoComponent,
-    canActivate: [ AuthGuardService ]
-  },
-  {
-    path: ':id/edit',
-    component: CursoEditComponent,
-    canActivate: [ AuthGuardService ]
-  },
-  {
-    path: ':id/detalhes',
-    component: CursoDetalhesComponent
-  }
+    component: CursosComponent,
+    children: [
+        {
+            path: 'novo',
+            component: CursoNovoComponent
+        },
+        {
+            path: ':id/edit',
+            component: CursoEditComponent,
+            canActivateChild: [CursosGuardService]
+        },
+        {
+            path: ':id/detalhes',
+            component: CursoDetalhesComponent
+
+        }
+    ]
+}
 ];
 
 @NgModule({

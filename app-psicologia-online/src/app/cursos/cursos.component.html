@@ -1,30 +1,21 @@
-<section class="container"> </section>
-
-
 <section id="doctors" class="doctors">
     <div class="container">
-
-        <div class="section-title">
-            <h2>Cursos</h2>
+      <div class="row mt-3 justify-content-center">
+        <div class="col-md-4 justify-content-center">
+            <h3>Cursos</h3>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let item of cursos">
+                    <a [routerLink]="['/cursos', item.id, 'detalhes']">
+                        {{item.nome}}
+                    </a>
+                </li>
+            </ul>
         </div>
-        <div class="row">
-            <div class="col-lg-6 mt-4 mt-lg-4 mx-auto" *ngFor="let obj of cursos">
-                <div class="member d-flex align-items-start">
-                    <div class="pic">
-                        <a [routerLink]="['/cursos', obj.id, 'detalhes']">
-                        <img [src]="obj.foto" class="img-fluid" alt=""></a>
-                    </div>
-                    <div class="member-info">
-                        <h4>{{obj.nome}}</h4>
-                        <span>{{obj.apresentacao}}</span>
-                        <p>Valor: R$ {{obj.preco}},00</p>
-                        <br>
-
-                    </div>
-                </div>
-            </div>
+        <div class="col">
+            <router-outlet></router-outlet>
         </div>
     </div>
+  </div>
 </section>
 
 

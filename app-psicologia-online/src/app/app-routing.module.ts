@@ -9,11 +9,11 @@ const routes: Routes = [
     redirectTo: 'principal',
     pathMatch: 'full'
   },
-  // {
-  //   path: 'admin',
-  //   loadChildren: ()=> import('src/app/admin/admin.module')
-  //                     .then(m => m.AdminModule)
-  // },
+  {
+     path: 'admin',
+     loadChildren: ()=> import('src/app/admin/admin.module')
+                       .then(m => m.AdminModule)
+  },
   {
     path: 'cursos',
     loadChildren: ()=> import('src/app/cursos/cursos.module')

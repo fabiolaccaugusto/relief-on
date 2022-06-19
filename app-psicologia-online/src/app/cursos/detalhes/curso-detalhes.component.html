@@ -1,13 +1,7 @@
-<section class="container"> </section>
-
-
 <section id="departments" class="departments">
-    <div class="container">
-
         <div class="section-title">
             <h2>Detalhe do Curso</h2>
         </div>
-
         <div class="row">
             <form>
                 <div class="mb-3 text-center">
@@ -35,18 +29,17 @@
                 </div>
 
                 <div class="row">
+                  <div class="d-grid col-6" *ngFor="let item of cursos">
+                    <button [routerLink]="['/cursos', item.id, 'edit']" class="btn btn-warning m-1">
+                      Editar
+                    </button>
+                </div>
                     <div class="d-grid col-6">
-                        <button [routerLink]="['/login']" type="button" class="btn btn-warning btn-lg">
-                            Comprar
-                        </button>
-                    </div>
-                    <div class="d-grid col-6">
-                        <button [routerLink]="['/cursos']" type="button" class="btn btn-primary btn-lg">
+                        <button [routerLink]="['/admin']" type="button" class="btn btn-primary">
                         Voltar
                         </button>
                     </div>
                 </div>
             </form>
         </div>
-    </div>
 </section>

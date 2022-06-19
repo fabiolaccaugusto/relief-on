@@ -13,11 +13,16 @@ import { Curso } from '../../models/curso.model';
 export class CursoDetalhesComponent implements OnInit {
   public curso: Curso = new Curso();
   public inscricao!: Subscription;
-  
+  public cursos: Curso [] = [];
+
   constructor(private rotaAtiva: ActivatedRoute,
               private cursoServ: CursoService) { }
 
   ngOnInit(): void {
+
+    this.cursoServ.getAll().subscribe((cursos)=>{
+      this.cursos = cursos;
+    });
 
     this.inscricao = this.rotaAtiva.params.subscribe((parametro)=>{
       const codigo = Number(parametro['id']);
@@ -28,7 +33,7 @@ export class CursoDetalhesComponent implements OnInit {
         console.log(curso);
       });
     });
-   
+
   }
 
   ngOnDestroy() {

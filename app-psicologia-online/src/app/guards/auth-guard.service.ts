@@ -12,17 +12,16 @@ import { AuthUsuarioService } from 'src/app/services/auth-usuario.service';
     providedIn: 'root'
 })
 export class AuthGuardService implements CanActivate {
-    constructor(private rota: Router,
-                private authUsuario: AuthUsuarioService) {}
+  constructor(private rota: Router,
+              private authUsuario: AuthUsuarioService) {}
 
-    public canActivate(route: ActivatedRouteSnapshot,
-        state: RouterStateSnapshot): Observable<boolean> | boolean {
+  public canActivate(route: ActivatedRouteSnapshot,
+      state: RouterStateSnapshot): Observable<boolean> | boolean {
+      if (this.authUsuario.isAutenticado()) {
+          return true;
+      }
 
-          if (this.authUsuario.getAutenticado()) {
-            return true;
-        }
-
-        this.rota.navigate(['/admin']);
-        return false;
-    }
+      this.rota.navigate(['/login']);
+      return false;
+  }
 }
