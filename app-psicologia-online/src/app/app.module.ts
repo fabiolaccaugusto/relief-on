@@ -7,45 +7,44 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { CursosModule } from 'src/app/cursos/cursos.module';
 
-
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './principal/header/header.component';
-import { FooterComponent } from './principal/footer/footer.component';
-import { HomeComponent } from './principal/home/home.component';
-import { LoginComponent } from './principal/login/login.component';
-import { RegisterComponent } from './principal/register/register.component';
+import { EspecialistasComponent } from './especialistas/especialistas.component';
+//import { HeaderComponent } from './principal/header/header.component';
+//import { FooterComponent } from './principal/footer/footer.component';
+//import { HomeComponent } from './principal/home/home.component';
+//import { RegisterComponent } from './principal/register/register.component';
 
-import { DepartamentsComponent } from './principal/departaments/departaments.component';
-import { SpecialistsComponent } from './especialistas/specialists/specialists.component';
-import { ContactComponent } from './principal/contact/contact.component';
-import { AppointmentComponent } from './principal/appointment/appointment.component';
+//import { DepartamentsComponent } from './principal/departaments/departaments.component';
+//import { SpecialistsComponent } from './especialistas/specialists/specialists.component';
+//import { ContactComponent } from './principal/contact/contact.component';
+//import { AppointmentComponent } from './principal/appointment/appointment.component';
 // import { CursoDetalhesComponent } from './cursos/detalhes/curso-detalhes.component';
 //import { CursoNovoComponent } from './cursos/curso-novo/curso-novo.component';
 // import { CursoEditComponent } from './cursos/edit/curso-edit.component';
 //import { CursosComponent } from './cursos/cursos.component';
-import { SpecialistsDetalhesComponent } from './especialistas/specialists-detalhes/specialists-detalhes.component';
-import { SpecialistsEditComponent } from './especialistas/specialists-edit/specialists-edit.component';
-import { SpecialistsNovoComponent } from './especialistas/specialists-novo/specialists-novo.component';
+//import { SpecialistsDetalhesComponent } from './especialistas/specialists-detalhes/specialists-detalhes.component';
+//import { SpecialistsEditComponent } from './especialistas/specialists-edit/specialists-edit.component';
+//import { SpecialistsNovoComponent } from './especialistas/specialists-novo/specialists-novo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    DepartamentsComponent,
-    SpecialistsComponent,
-    ContactComponent,
-    LoginComponent,
-    RegisterComponent,
-    AppointmentComponent,
-    HeaderComponent,
-    FooterComponent,
+    EspecialistasComponent,
+   // HomeComponent,
+   // DepartamentsComponent,
+    //SpecialistsComponent,
+    //ContactComponent,
+   // RegisterComponent,
+   // AppointmentComponent,
+    //HeaderComponent,
+    //FooterComponent,
     // CursoDetalhesComponent,
     // CursoNovoComponent,
     // CursoEditComponent,
     //CursosComponent,
-    SpecialistsDetalhesComponent,
-    SpecialistsEditComponent,
-    SpecialistsNovoComponent,
+    //SpecialistsDetalhesComponent,
+    //SpecialistsEditComponent,
+    //SpecialistsNovoComponent,
     // AdminComponent
   ],
 
