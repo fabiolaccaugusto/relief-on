@@ -13,67 +13,136 @@
             <form #form="ngForm" [formGroup]="alunoForm" (ngSubmit)="registrar()" class="form-signin">
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome</label>
-                    <input name="nome" formControlName="nome" type="text" class="form-control" id="nome">
+                    <input [class.invalid]="!alunoForm.controls['nome'].valid
+                    && alunoForm.controls['nome'].touched"
+                    type="text" class="form-control" id="nome"
+                    name="nome" formControlName="nome" required>
 
-                    <div *ngIf="(alunoForm.get('nome')?.errors?.['required'] || 
+                    <div class="alert alert-danger mt-1" role="alert"
+                    *ngIf="
+                    (alunoForm.get('nome')?.errors?.['required'] ||
                     alunoForm.get('nome')?.errors?.['minlength'] ||
-                    alunoForm.get('nome')?.errors?.['maxlength']) 
-                    && (form.submitted || alunoForm.get('nome')?.touched)" class="alert alert-danger" role=" alert ">
-                        Informe o nome do usuário, respeitando as quantidades mínima e máxima de caracteres que são iguais a 5 e 255, respectivamente!
-                    </div>
+                    alunoForm.get('nome')?.errors?.['maxlength']) &&
+                    (form.submitted || alunoForm.get('nome')?.touched)">
+                    Informe um nome entre 5 e 150 caracteres.
+                  </div>
                 </div>
+
                 <div class="mb-3">
                     <label for="cpf " class="form-label ">CPF</label>
-                    <input name="cpf " formControlName="cpf " type="text " class="form-control " id="cpf ">
+                    <input [class.invalid]=" !alunoForm.controls['cpf'].valid
+                    && alunoForm.controls['cpf'].touched"
+                    type="text" class="form-control" id="cpf"
+                    name="cpf" formControlName="cpf">
 
-                    <div class="alert alert-danger" role=" alert " *ngIf="(alunoForm.get('cpf')?.errors?.['required'] || 
-                    alunoForm.get( 'cpf')?.errors?.[ 'minlength']) (form.submitted || alunoForm.get('cpf')?.touched)">
-                        Informe os 11 dígitos do seu CPF
+                    <div class="alert alert-danger mt-1" role="alert"
+                      *ngIf="(alunoForm.get('cpf')?.errors?.['required'] ||
+                            alunoForm.get('cpf')?.errors?.['cpfInvalido']) &&
+                            (form.submitted || alunoForm.get('cpf')?.touched)">
+                            Informe corretamente o seu CPF!
                     </div>
                 </div>
-                <div class="mb-3">
-                    <label for="email " class="form-label ">Email</label>
-                    <input name="email " formControlName="email " type="email " class="form-control " id="email ">
 
-                    <div class="alert alert-danger " role="alert " *ngIf="(alunoForm.get( 'email')?.errors?.[ 'required'] || alunoForm.get( 'email')?.errors?.[ 'email']) && (form.submitted || alunoForm.get('email')?.touched)">
-                        Informe o email correto
-                    </div>
-                </div>
                 <div class="mb-3">
-                    <label for="senha " class="form-label ">Senha</label>
-                    <input name="senha " formControlName="senha " type="password" class="form-control " id="senha ">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                  [class.invalid]="
+                  !alunoForm.controls['email'].valid
+                  && alunoForm.controls['email'].touched"
+                  type="email" class="form-control" id="email"
+                  name="email" formControlName="email">
 
-                    <div class="alert alert-danger " role="alert " *ngIf="(alunoForm.get( 'senha')?.errors?.[ 'required'] || alunoForm.get( 'senha')?.errors?.[ 'senha']) && (form.submitted || alunoForm.get('senha')?.touched)">
-                        Informe uma senha com 6 dígitos
-                    </div>
+                  <div class="alert alert-danger mt-1" role="alert"
+                  *ngIf="(alunoForm.get('email')?.errors?.['required'] ||
+                          alunoForm.get('email')?.errors?.['email']) &&
+                          (form.submitted || alunoForm.get('email')?.touched)">
+                    Informe o e-mail corretamente!
+                  </div>
                 </div>
-                <div class="mb-3">
-                    <label for="senhaCheck " class="form-label ">Confirmar Senha</label>
-                    <input name="senhaCheck " formControlName="senhaCheck " type="password" class="form-control " id="senhaCheck ">
 
-                    <div class="alert alert-danger " role="alert " *ngIf="(alunoForm.get( 'senhaChek')?.errors?.[ 'required'] || alunoForm.get( 'senhaCheck')?.errors?.[ 'senhaCheck']) && (form.submitted || alunoForm.get('senhaCheck')?.touched)">
-                        Confirme a senha
-                    </div>
-                </div>
+
                 <div class="mb-3">
-                    <h6>Gênero</h6>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" name="genero" formControlName="genero" id="feminino" value="f">
-                        <label class="form-chack-label" for="feminino">
-                            Feminino
-                        </label></div>
-                    <div class="form-check">
-                        <input type="radio" class="form-check-input" name="genero" formControlName="genero" id="masculino" value="m">
-                        <label class="form-chack-label" for="masculino">
-                            Masculino
-                        </label>
-                        <!-- display inline-block -->
-                    </div>
+                  <label for="senha" class="form-label">Senha</label>
+                  <input
+                  [class.invalid]="
+                  !alunoForm.controls['senha'].valid
+                  && alunoForm.controls['senha'].touched"
+                  name="senha" type="password" class="form-control" id="senha"
+                  formControlName="senha">
+
+                  <div class="alert alert-danger mt-1" role="alert"
+                  *ngIf="(alunoForm.get('senha')?.errors?.['required'] ||
+                         alunoForm.get('senha')?.errors?.['minlength']) &&
+                         (form.submitted || alunoForm.get('senha')?.touched)">
+                    Informe uma senha com pelo menos 6 caracteres!
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="senhaCheck" class="form-label">Repita a Senha</label>
+                  <input
+                  [class.invalid]="
+                  !alunoForm.controls['senhaCheck'].valid
+                  && alunoForm.controls['senhaCheck'].touched"
+                  name="senhaCheck" type="password" class="form-control" id="senhaCheck"
+                  formControlName="senhaCheck">
+
+                  <div class="alert alert-danger mt-1" role="alert"
+                  *ngIf="(alunoForm.get('senhaCheck')?.errors?.['required'] ||
+                         alunoForm.get('senhaCheck')?.errors?.['minlength'] ||
+                         alunoForm.get('senhaCheck')?.errors?.['equalsTo']
+                         ) &&
+                         (form.submitted ||
+                          alunoForm.get('senhaCheck')?.touched)">
+                    Informe uma senha com pelo menos 8 caracteres!
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <h3>Gênero</h3>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio"
+                           name="genero" id="masculino" value="m"
+                           formControlName="genero">
+                    <label class="form-check-label" for="masculino">
+                      Masculino
+                    </label>
+                  </div>
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio"
+                           name="genero" id="feminino" value="f"
+                           formControlName="genero">
+                    <label class="form-check-label" for="feminino">
+                      Feminino
+                    </label>
+                  </div>
+
+                  <div class="alert alert-danger" role="alert"
+                   *ngIf="alunoForm.get('genero')?.errors?.['required'] &&
+                    form.submitted">
+                    Selecione o gênero
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <h3>Assuntos favoritos</h3>
+                  <div *ngFor="let obj of listaFavoritos; let i=index">
+                    <label>
+                      {{obj.nome}}
+                      <input type="checkbox" [value]="obj.value"
+                      [checked]="obj.checked"
+                      (change)="onSelectionChange($event, i)">
+                    </label>
+                  </div>
                 </div>
                 <div class="d-grid gap-2">
-                    <button (click)="registrar()" type="button" class="btn btn-primary">
+                  <button type="submit" class="btn btn-success">
+                    Registrar
+                  </button>
+                    <!-- <button (click)="registrar()" type="button" class="btn btn-primary">
                         Registrar
-                    </button>
+                    </button> -->
                 </div>
             </form>
         </body>
