@@ -17,7 +17,7 @@ public canActivate(route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | boolean {
       if (this.authUsuario.getAutenticado()) {
       return true;
-      }
+}
 
 this.rota.navigate(['/login']);
 return false;

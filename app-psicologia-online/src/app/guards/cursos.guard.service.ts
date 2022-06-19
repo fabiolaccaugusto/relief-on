@@ -14,12 +14,12 @@ export class CursosGuardService implements CanActivate {
     private authUsuario: AuthUsuarioService) {}
 
 public canActivate(route: ActivatedRouteSnapshot,
-state: RouterStateSnapshot): Observable<boolean> | boolean {
-if (this.authUsuario.getAutenticado()) {
-return true;
+    state: RouterStateSnapshot): Observable<boolean> | boolean {
+      if (this.authUsuario.getAutenticado()) {
+      return true;
 }
 
-this.rota.navigate(['/login']);
+this.rota.navigate(['/cursos']);
 return false;
 }
 }

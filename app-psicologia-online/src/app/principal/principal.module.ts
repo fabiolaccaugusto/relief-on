@@ -1,3 +1,4 @@
+import { SpecialistsComponent } from './../especialistas/specialists/specialists.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule,
@@ -11,6 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
+import { EspecialistasPrincipalComponent } from './especialistas-principal/especialistas-principal.component';
+import { CursosPrincipalComponent } from './cursos-principal/cursos-principal.component';
 
 
 @NgModule({
@@ -20,13 +23,17 @@ import { HomeComponent } from './home/home.component';
         FooterComponent,
         LoginComponent,
         RegisterComponent,
-        HomeComponent
+        HomeComponent,
+        EspecialistasPrincipalComponent,
+        CursosPrincipalComponent
     ],
     imports: [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
         PrincipalRoutingModule
+          ],
+    exports: [
     ],
     providers: [],
 })

@@ -8,6 +8,9 @@ import { RegisterComponent } from './register/register.component';
 import { ContactComponent } from './contact/contact.component';
 import { DepartamentsComponent } from './departaments/departaments.component';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { CursosPrincipalComponent } from './cursos-principal/cursos-principal.component';
+import { EspecialistasPrincipalComponent } from './especialistas-principal/especialistas-principal.component';
+
 
 const routes: Routes = [
     {
@@ -24,25 +27,28 @@ const routes: Routes = [
                 component: HomeComponent
             },
             {
+              path: 'departaments',
+              component: DepartamentsComponent
+            },
+            {
+              path: 'especialistas',
+              component: EspecialistasPrincipalComponent
+            },
+            {
+              path: 'cursos',
+              component: CursosPrincipalComponent
+            },
+            {
+              path: 'contact',
+              component: ContactComponent
+            },
+            {
                 path: 'login',
                 component: LoginComponent
             },
             {
                 path: 'register',
                 component: RegisterComponent
-            },
-            {
-              path: 'register',
-              component: RegisterComponent
-            },
-
-            {
-              path: 'contact',
-              component: ContactComponent
-            },
-            {
-              path: 'departaments',
-              component: DepartamentsComponent
             },
             {
               path: 'appointment',

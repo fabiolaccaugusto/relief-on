@@ -30,32 +30,6 @@ const routes: Routes = [
   }
 ];
 
-// const routes: Routes = [
-//     {
-//         path: '',
-//         component: CursosComponent,
-//         children: [
-//             {
-//                 path: 'novo',
-//                 component: CursoNovoComponent
-//             },
-//             {
-//                 path: 'catalogo',
-//                 component: CatalogoComponent
-//             },
-//             {
-//                 path: ':id/edit',
-//                 component: CursoEditComponent
-//             },
-//             {
-//                path: ':id/detalhes',
-//                 component: CursoDetalhesComponent,
-//                 canActivateChild: [CursosGuardService]
-//             }
-//           ]
-//     },
-// ];
-
 @NgModule({
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]

@@ -19,8 +19,6 @@ import { AppComponent } from './app.component';
     HttpClientModule
   ],
   exports: [
-    //SpecialistsModule,
-    // dizer para o angular quais sao as declarações desse modulo aqui (componentes, diretivas ou pipes)
   ],
   providers: [
   ],
