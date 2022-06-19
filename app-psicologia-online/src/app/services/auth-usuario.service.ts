@@ -8,20 +8,20 @@ import { Aluno } from 'src/app/models/aluno.model';
     providedIn: 'root'
 })
 export class AuthUsuarioService {
-  private isAutenticado: boolean = false;
-  public usuarioLogado = new EventEmitter<boolean>();
+    private isAutenticado: boolean = false;
+    public usuarioLogado = new EventEmitter<boolean>();
 
-  constructor(private alunoServ: AlunoService,
+    constructor(private alunoServ: AlunoService,
               private rota: Router) { }
 
-  public logar(aluno: Aluno) {
+    public logar(aluno: Aluno) {
 
-      this.alunoServ.checkLogin(aluno).subscribe((alunos: Aluno[])=>{
-          const [ user ] = alunos;
+          this.alunoServ.checkLogin(aluno).subscribe((alunos: Aluno[])=>{
+            const [ user ] = alunos;
 
-          console.log(user);
+            console.log(user);
 
-          if (user) {
+            if (user) {
               this.isAutenticado = true;
               this.usuarioLogado.emit(true);
               this.rota.navigate(['./admin']);

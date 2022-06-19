@@ -22,7 +22,7 @@ export class AuthGuardService implements CanActivate {
             return true;
         }
 
-        this.rota.navigate(['/principal/login']);
+        this.rota.navigate(['/admin']);
         return false;
     }
 }
