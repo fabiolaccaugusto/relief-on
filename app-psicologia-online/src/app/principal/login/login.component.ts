@@ -16,10 +16,6 @@ export class LoginComponent implements OnInit {
   }
 
   public realizarLogin() {
-    if (this.aluno.email && this.aluno.senha) {
-      this.authUsuario.logar(this.aluno);
-    } else {
-      alert('Informe o usuário e/ou senha!');
-    }
+    this.authUsuario.logar(this.aluno);
   }
 }

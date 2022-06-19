@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { Curso } from '../models/curso.model';
 import { environment } from 'src/environments/environment';
 
-
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json'
@@ -15,21 +14,10 @@ const httpOptions = {
   providedIn: 'root'
 })
 
-// Para usar o HttpClient, HttpHeaders, temos que primeiro injetá-lo nas classes que utilizarei
-
-
 export class CursoService {
   private urlBase: string = environment.api+'cursos/';
-
- // private urlBase: string = 'http://localhost:3000/cursos/';
-
   public cursosUpdate = new EventEmitter<boolean>();
-  
-  constructor(private httpCliente: HttpClient) { }
-
-
-// O serviço HttpClient faz o uso de observables para todas as transações, para isso,
-//importei o RxJS, onde emitirá notificações quando acontece alguma mudança em um de seus itens
+    constructor(private httpCliente: HttpClient) { }
 
   public getAll(): Observable<Curso[]> {
     return this.httpCliente.get<Curso[]>(this.urlBase);

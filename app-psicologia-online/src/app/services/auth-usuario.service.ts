@@ -24,7 +24,7 @@ export class AuthUsuarioService {
           if (user) {
               this.isAutenticado = true;
               this.usuarioLogado.emit(true);
-              this.rota.navigate(['/principal/home']);
+              this.rota.navigate(['./admin']);
           }
 
       });
