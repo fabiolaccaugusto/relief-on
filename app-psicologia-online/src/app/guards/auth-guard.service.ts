@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot,
          Router,
@@ -16,11 +17,12 @@ export class AuthGuardService implements CanActivate {
 
     public canActivate(route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): Observable<boolean> | boolean {
-        if (this.authUsuario.isAutenticado()) {
+
+          if (this.authUsuario.getAutenticado()) {
             return true;
         }
 
-        this.rota.navigate(['/login']);
+        this.rota.navigate(['/principal/login']);
         return false;
     }
 }

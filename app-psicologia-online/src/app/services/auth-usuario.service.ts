@@ -8,43 +8,30 @@ import { Aluno } from 'src/app/models/aluno.model';
     providedIn: 'root'
 })
 export class AuthUsuarioService {
-    private autenticado: boolean = false;
-    public usuarioLogado = new EventEmitter<boolean>();
+  private isAutenticado: boolean = false;
+  public usuarioLogado = new EventEmitter<boolean>();
 
-    constructor(private rota: Router, private alunoServ: AlunoService) { }
+  constructor(private alunoServ: AlunoService,
+              private rota: Router) { }
 
-    public logar(usuario: Aluno) {
-        this.alunoServ.checarLogin(usuario).subscribe((resposta:Aluno[])=>{
-            const [ usuarioLogin ] = resposta;
+  public logar(aluno: Aluno) {
 
-            console.log(usuarioLogin);
+      this.alunoServ.checkLogin(aluno).subscribe((alunos: Aluno[])=>{
+          const [ user ] = alunos;
 
-            if (usuarioLogin) {
-              this.setAutenticado(true);
+          console.log(user);
+
+          if (user) {
+              this.isAutenticado = true;
               this.usuarioLogado.emit(true);
-              this.rota.navigate(['/admin']);
-            } else {
-                this.setAutenticado(false);
-            }
-        }); 
-    }
+              this.rota.navigate(['/principal/home']);
+          }
 
-    public criarConta(aluno: Aluno) {
-        this.alunoServ.add(aluno).subscribe((alunoCad)=>{
-            console.log(alunoCad);
-            this.rota.navigate(['/login']);
-        });
-    }
+      });
 
-    public deslogar() {
+  }
 
-    }
-
-    public setAutenticado(valor: boolean) {
-        this.autenticado = valor;
-    }
-
-    public isAutenticado() {
-        return this.autenticado;
-    }
+  public getAutenticado() {
+      return this.isAutenticado;
+  }
 }
