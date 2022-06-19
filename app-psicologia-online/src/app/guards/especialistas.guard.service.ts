@@ -14,10 +14,10 @@ export class EspecialistasGuardService implements CanActivate {
     private authUsuario: AuthUsuarioService) {}
 
 public canActivate(route: ActivatedRouteSnapshot,
-state: RouterStateSnapshot): Observable<boolean> | boolean {
-if (this.authUsuario.isAutenticado()) {
-return true;
-}
+    state: RouterStateSnapshot): Observable<boolean> | boolean {
+      if (this.authUsuario.getAutenticado()) {
+      return true;
+      }
 
 this.rota.navigate(['/login']);
 return false;
