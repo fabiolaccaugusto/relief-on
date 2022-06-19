@@ -9,8 +9,8 @@ import { CursosModule } from 'src/app/cursos/cursos.module';
 
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './principal/header/header.component';
+import { FooterComponent } from './principal/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -26,6 +26,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { SpecialistsDetalhesComponent } from './specialists-detalhes/specialists-detalhes.component';
 import { SpecialistsEditComponent } from './specialists-edit/specialists-edit.component';
 import { SpecialistsNovoComponent } from './specialists-novo/specialists-novo.component';
+import { CursosLandingPageComponent } from './cursos-landing-page/cursos-landing-page.component';
 
 @NgModule({
   declarations: [
@@ -45,11 +46,12 @@ import { SpecialistsNovoComponent } from './specialists-novo/specialists-novo.co
     //CursosComponent,
     SpecialistsDetalhesComponent,
     SpecialistsEditComponent,
-    SpecialistsNovoComponent
+    SpecialistsNovoComponent,
+    CursosLandingPageComponent
     // AdminComponent
   ],
 
-  imports: [      
+  imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,

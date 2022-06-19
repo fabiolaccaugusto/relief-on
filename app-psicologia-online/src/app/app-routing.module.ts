@@ -1,3 +1,4 @@
+import { CursosLandingPageComponent } from './cursos-landing-page/cursos-landing-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -10,7 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 import { SpecialistsComponent } from './specialists/specialists.component';
 import { DepartamentsComponent } from './departaments/departaments.component';
 import { AppointmentComponent } from './appointment/appointment.component';
-// import { CursoDetalhesComponent } from 'src/app/cursos/detalhes/curso-detalhes.component';
+//import { CursoDetalhesComponent } from 'src/app/cursos/detalhes/curso-detalhes.component';
 // import { CursoNovoComponent } from 'src/app/cursos/curso-novo/curso-novo.component';
 // import { CursoEditComponent } from 'src/app/cursos/edit/curso-edit.component';
 import { SpecialistsDetalhesComponent } from './specialists-detalhes/specialists-detalhes.component';
@@ -66,20 +67,20 @@ const routes: Routes = [
     component: AppointmentComponent
   },
   {
+    path: 'cursos-landing-page',
+    component: CursosLandingPageComponent
+  },
+  {
     path: 'cursos',
     loadChildren: ()=> import('src/app/cursos/cursos.module')
                       .then(m => m.CursosModule)
   },
-  {
-    path: 'admin',
-    loadChildren: ()=> import('src/app/admin/admin.module')
-                      .then(m => m.AdminModule)
-  },
 
-  // {
-  //   path: 'curso-detalhes/:id',
-  //   component: CursoDetalhesComponent
-  // },
+
+//   {
+//     path: 'curso-detalhes/:id',
+//     component: CursoDetalhesComponent
+//   },
   //{
   // path: 'curso-novo',
   // component: CursoNovoComponent,
@@ -124,4 +125,5 @@ export class AppRoutingModule { }
 
 
 //ctrl + k + c  => para Comentar
-//ctrl + k + c  => para Descomentar
+//ctrl + k + c  => para reverter comentário
+
