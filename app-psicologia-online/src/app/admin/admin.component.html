@@ -27,7 +27,7 @@
                     </a>
                   </td>
                   <td>{{item.descricao}}</td>
-                  <td>{{item.preco}}</td>
+                  <td>{{item.preco | currency: 'BRL'}}</td>
                   <td>
                     <button [routerLink]="['/cursos', item.id, 'edit']" class="btn btn-warning m-1">
                       Editar

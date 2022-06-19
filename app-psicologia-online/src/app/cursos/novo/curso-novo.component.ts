@@ -25,7 +25,7 @@ export class CursoNovoComponent implements OnInit {
       this.rota.navigate(['/admin']);
     });
 
-   
+
   }
 
 }
