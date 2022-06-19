@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms'
-import { Aluno } from '../models/aluno.model';
-import { AlunoService } from '../services/aluno.service';
+import { Aluno } from 'src/app/models/aluno.model';
+import { AlunoService } from 'src/app/services/aluno.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
     } else {
       console.log('Formulário inválido');
     }
-    
-    
+
+
   }
 }

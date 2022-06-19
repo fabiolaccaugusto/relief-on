@@ -1,22 +1,21 @@
-import { CursosLandingPageComponent } from './cursos-landing-page/cursos-landing-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuardService } from 'src/app/guards/auth-guard.service';
 
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { ContactComponent } from './contact/contact.component';
-import { SpecialistsComponent } from './specialists/specialists.component';
-import { DepartamentsComponent } from './departaments/departaments.component';
-import { AppointmentComponent } from './appointment/appointment.component';
+import { HomeComponent } from './principal/home/home.component';
+import { LoginComponent } from './principal/login/login.component';
+import { RegisterComponent } from './principal/register/register.component';
+import { ContactComponent } from './principal/contact/contact.component';
+import { SpecialistsComponent } from './especialistas/specialists/specialists.component';
+import { DepartamentsComponent } from './principal/departaments/departaments.component';
+import { AppointmentComponent } from './principal/appointment/appointment.component';
 //import { CursoDetalhesComponent } from 'src/app/cursos/detalhes/curso-detalhes.component';
 // import { CursoNovoComponent } from 'src/app/cursos/curso-novo/curso-novo.component';
 // import { CursoEditComponent } from 'src/app/cursos/edit/curso-edit.component';
-import { SpecialistsDetalhesComponent } from './specialists-detalhes/specialists-detalhes.component';
-import { SpecialistsEditComponent } from './specialists-edit/specialists-edit.component';
-import { SpecialistsNovoComponent } from './specialists-novo/specialists-novo.component';
+import { SpecialistsDetalhesComponent } from './especialistas/specialists-detalhes/specialists-detalhes.component';
+import { SpecialistsEditComponent } from './especialistas/specialists-edit/specialists-edit.component';
+import { SpecialistsNovoComponent } from './especialistas/specialists-novo/specialists-novo.component';
 // import { CursoNovoComponent } from './cursos/novo/curso-novo.component';
 // import { CursoEditComponent } from './cursos/edit/curso-edit.component';
 // import { CursoDetalhesComponent } from './cursos/detalhes/curso-detalhes.component';
@@ -65,10 +64,6 @@ const routes: Routes = [
   {
     path: 'appointment',
     component: AppointmentComponent
-  },
-  {
-    path: 'cursos-landing-page',
-    component: CursosLandingPageComponent
   },
   {
     path: 'cursos',
