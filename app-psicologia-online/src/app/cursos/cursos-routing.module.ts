@@ -6,7 +6,7 @@ import { CursosComponent } from "./cursos.component";
 import { CursoNovoComponent } from './novo/curso-novo.component';
 import { CursoEditComponent } from 'src/app/cursos/edit/curso-edit.component';
 import { CursoDetalhesComponent } from 'src/app/cursos/detalhes/curso-detalhes.component';
-import { CursosLandingPageComponent } from "../cursos-landing-page/cursos-landing-page.component";
+
 
 
 const routes: Routes = [
