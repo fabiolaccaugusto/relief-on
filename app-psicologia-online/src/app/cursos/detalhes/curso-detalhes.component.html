@@ -1,4 +1,3 @@
-<section id="departments" class="departments">
         <div class="section-title">
             <h2>Detalhe do Curso</h2>
         </div>
@@ -30,16 +29,15 @@
 
                 <div class="row">
                   <div class="d-grid col-6" *ngFor="let item of cursos">
-                    <button [routerLink]="['/cursos', item.id, 'edit']" class="btn btn-warning m-1">
+                    <button [routerLink]="['/cursos', item.id, 'edit']" type="button" class="btn btn-warning m-1">
                       Editar
                     </button>
-                </div>
+                  </div>
                     <div class="d-grid col-6">
-                        <button [routerLink]="['/admin']" type="button" class="btn btn-primary">
+                      <button [routerLink]="['/admin']" type="button" class="btn btn-primary">
                         Voltar
-                        </button>
+                      </button>
                     </div>
                 </div>
             </form>
         </div>
-</section>

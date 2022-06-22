@@ -2,18 +2,18 @@
   "cursos": [
     {
       "id": 1,
-      "nome": "O  Subconsciente",
-      "descricao": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "apresentacao": "Lorem ipsum dol",
+      "nome": "Frequência Vibracional",
+      "descricao": "A autora ensina a utilizar a energia interior para transformação pessoal, minimizando os problemas diarios, maximizando a lucidez. Transmite de forma clara os passos necessarios para percepção da vibração ao redor e no interior. Verdadeira transformação pessoal.",
+      "apresentacao": "Utilize todo o seu potencial de energia interior",
       "preco": 180,
       "foto": "assets/img/6.jpeg"
     },
     {
       "id": 2,
       "nome": "Você é o Universo",
-      "descricao": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "apresentacao": "Lorem ipsum dol",
-      "preco": 150,
+      "descricao": "A realidade em que você vive será sua para abraçá-la ou transformá-la. O que acontece quando a ciência moderna desafia tudo o que conhecemos sobre realidade? Neste trabalho brilhante e atual, o best-seller Deepak Chopra e o reconhecido físico Menas Kafatos propõem uma nova aliança entre ciência e espiritualidade, entre física quântica e vida cotidiana, questionando nosso papel na construção da realidade em que vivemos. Trazem assim uma nova e inovadora compreensão de quem somos e de como podemos transformar o mundo enquanto atingimos nosso maior potencial.",
+      "apresentacao": "Crie sua realidade quântica e transforme sua vida",
+      "preco": 230,
       "foto": "assets/img/12.jpg"
     }
   ],
